@@ -18,3 +18,6 @@ aux/
 *.ind
 *.nlo
 *.nls
+
+# Archivos de compilación de PDF
+build/
