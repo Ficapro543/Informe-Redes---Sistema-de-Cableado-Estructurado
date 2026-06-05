@@ -4,7 +4,6 @@
             "name": "pdflatex",
             "command": "pdflatex",
             "args": [
-                "-aux-directory=aux",
                 "-output-directory=.",
                 "%DOC%"
             ]
