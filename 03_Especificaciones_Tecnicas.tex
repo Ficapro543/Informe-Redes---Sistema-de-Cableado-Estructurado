@@ -1,18 +1,63 @@
 \chapter{Especificaciones Técnicas}
 
 \section{Tipo y categoría de cables}
-Tipo de cableado (UTP, STP, fibra óptica).
+Para garantizar el rendimiento requerido en una Facultad de Ingeniería de Informática, especialmente en zonas de alta demanda como los laboratorios del tercer piso y el laboratorio de investigación del cuarto piso, se especifica el siguiente esquema de cableado:
+
+\begin{itemize}
+    \item \textbf{Cableado Horizontal (Datos y Telefonía IP):} Se utilizará cable de par trenzado de cuatro pares del tipo \textbf{F/UTP (Foiled/Unshielded Twisted Pair) Categoría 6A} LSZH (Low Smoke Zero Halogen), marca \textbf{Panduit} modelo \texttt{PUFL6X04WH}. El blindaje general foil protege contra la diafonía exógena (Alien Crosstalk) y las interferencias electromagnéticas típicas de los entornos de laboratorios informáticos. Soporta velocidades de hasta 10 Gbps a frecuencias de 500 MHz.
+    \item \textbf{Cableado Vertical o Backbone:} Conexión entre el Distribuidor Principal de Cableado (MDF) situado en el tercer piso y el Distribuidor de Piso (IDF) del cuarto piso mediante \textbf{Fibra Óptica Multimodo OM4} de 4 hilos, con chaqueta LSZH, marca \textbf{CommScope} serie \texttt{TeraSPEED}, optimizada para transmisión láser de 10/40/100 Gbps.
+    \item \textbf{Cableado para CCTV (Cámaras IP):} Se utilizará cable \textbf{F/UTP Cat 6A} LSZH (mismo tipo que el cableado horizontal) para las cámaras IP de videovigilancia, alimentadas mediante PoE+ desde los switches de acceso. Los puntos de cámara compartirán el mismo esquema de cableado y certificación que los puntos de datos.
+\end{itemize}
 
 \section{Normas de instalación, etiquetado y terminación}
-Categoría de cables (Cat 6, Cat 6A, Cat 7).
+Toda la infraestructura instalada debe ceñirse estrictamente a los estándares internacionales de telecomunicaciones:
+
+\begin{itemize}
+    \item \textbf{Estándares de Diseño e Instalación:} ANSI/TIA-568.0-D (Cableado Genérico para Telecomunicaciones en las Instalaciones del Cliente) y ANSI/TIA-568.1-D (Estándar de Infraestructura de Telecomunicaciones para Edificios Comerciales). Adicionalmente, se cumple con el \textbf{Reglamento Nacional de Edificaciones (RNE)} del Perú, norma EM.010 (Redes e Infraestructura de Telecomunicaciones) y el \textbf{Código Nacional de Electricidad - Utilización (CNE)} para canalizaciones y seguridad eléctrica.
+    \item \textbf{Esquema de Terminación:} Se implementará el patrón de conexión \textbf{T568B} de manera uniforme en todos los módulos RJ-45 (jacks), patch panels y patch cords de la obra.
+    \item \textbf{Administración y Etiquetado:} Bajo la norma \textbf{ANSI/TIA-606-C}. Cada punto de red, cable, patch panel y gabinete poseerá una etiqueta impresa térmicamente con un código alfanumérico estructurado (\textit{Ejemplo: 03P-LAB1-01} para el Tercer Piso, Laboratorio 1, Punto 01). Las tomas de usuario contarán con iconos de color para diferenciar redes de datos, telefonía IP y cámaras de seguridad.
+\end{itemize}
 
 \section{Estándares de racks y gabinetes}
-Estándares de terminación, etiquetado y certificación.
+\begin{itemize}
+    \item \textbf{Gabinete Principal (MDF - 3er Piso):} Gabinete de piso autocualificado de \textbf{19 pulgadas} de ancho útil y una altura de \textbf{42U}. Cumplirá con el estándar EIA-310-E, con puertas microperforadas para optimizar el flujo de aire y cerradura de seguridad. Alojará los servidores locales, switches troncales y patch panels del 3er piso.
+    \item \textbf{Gabinete Secundario (IDF - 4to Piso):} Gabinete de pared/piso de \textbf{24U}, ubicado estratégicamente para no superar el límite de 90 metros de canalización horizontal hacia los cubículos, auditorio y control de cámaras.
+    \item \textbf{Ordenadores de Cable:} Se instalarán organizadores horizontales de 1U/2U con ducto ranurado frontales y organizadores verticales dentro de los gabinetes para asegurar un radio de curvatura correcto en los cables de parcheo.
+\end{itemize}
 
 \section{Equipos pasivos y activos}
-Equipos activos y pasivos (switches, patch panels, racks).
+La infraestructura se compondrá de hardware certificado de grado empresarial:
+
+\subsection*{Equipos Pasivos}
+    \begin{itemize}
+        \item \textbf{Patch Panels:} Módulos modulares descargados de 24 puertos Cat 6A angulares, marca \textbf{CommScope} modelo \texttt{760237040}, para optimizar el espacio y evitar el estrés mecánico en los patch cords.
+        \item \textbf{Jacks y Conectores:} Módulos RJ-45 Mini-Com Cat 6A blindados, marca \textbf{Panduit} modelo \texttt{CJS6X88TGY}, con tecnología de terminación por desplazamiento de aislante (IDC).
+        \item \textbf{Faceplates y Cajas de Montaje:} Placas faceplate de 2 puertos color blanco, marca \textbf{Panduit} modelo \texttt{CFPL2EIWH}, con etiquetado iconográfico integrado. Se instalarán sobre cajas superficiales de PVC de 1 módulo en paredes y canaletas.
+        \item \textbf{Patch Cords:} Cables de parcheo F/UTP Cat 6A blindados, marca \textbf{Panduit} modelo \texttt{CO6X7BU} (2.1 m) y \texttt{CO6X3BU} (1.0 m), con conectores blindados RJ-45 moldeados.
+        \item \textbf{Organizadores de Cable:} Organizadores horizontales de 1U con ducto ranurado frontal y tapa desmontable, marca \textbf{Tripp Lite} modelo \texttt{NR2600}, instalados entre cada patch panel. Organizadores verticales dentro de cada gabinete para el guiado de cables de parcheo.
+        \item \textbf{Canalizaciones:} Escalerillas portacables de tipo malla electrozincada en pasadizos principales, y canaletas de PVC de doble vía con división física para datos y energía en las oficinas y laboratorios. Para el backbone de fibra óptica entre pisos se utilizará tubería corrugada de 1 pulgada y canaleta metálica dedicada.
+        \item \textbf{Sistema de Puesta a Tierra:} Barra de Puesta a Tierra Principal de Telecomunicaciones (TMGB) y barra secundaria (TGB), marca \textbf{Panduit} modelo \texttt{TMGB-060} y \texttt{TGB-040}, con conductor de cobre aislado verde 6 AWG. Todos los gabinetes, bandejas y blindajes se interconectarán a estas barras.
+    \end{itemize}
+
+\subsection*{Equipos Activos}
+    \begin{itemize}
+        \item \textbf{Switches de Acceso:} Switches gestionables de Capa 2/3 con soporte \textbf{PoE+ (Power over Ethernet)} marca \textbf{Cisco} serie \textbf{Catalyst 9200}, modelos \texttt{C9200-48P-E} (48 puertos) y \texttt{C9200-24P-E} (24 puertos), con puertos de bajada a 1 Gbps Base-T y uplinks de 10 Gbps SFP+ para el backbone de fibra óptica.
+        \item \textbf{Transceptores SFP+:} Módulos SFP+ monomodo/multimodo 10 GBase-SR, marca \textbf{Cisco} modelo \texttt{SFP-10G-SR}, para los enlaces de fibra entre el MDF del tercer piso y el IDF del cuarto piso.
+        \item \textbf{Puntos de Acceso Inalámbrico (WiFi 6):} Access Points de interior doble banda (2.4 GHz / 5 GHz) con soporte \textbf{WiFi 6 (802.11ax)}, marca \textbf{Cisco} modelo \texttt{C9120AXI}, alimentados mediante PoE+. Se instalarán estratégicamente en pasadizos y ambientes comunes para brindar cobertura inalámbrica en laboratorios, auditorio, sala multiusos, circulos de estudio y áreas administrativas.
+        \item \textbf{Cámaras IP (CCTV):} Cámaras IP fijas de interior con resolución mínima de 2 MP, PoE+, marca \textbf{Dahua} o \textbf{Hikvision}, conectadas a los switches de acceso PoE+. El \textbf{NVR (Network Video Recorder)} se ubicará en el gabinete MDF del tercer piso para la grabación y gestión centralizada de video.
+    \end{itemize}
 
 \section{Requisitos eléctricos y de puesta a tierra}
-Normas eléctricas y de puesta a tierra.
+\begin{itemize}
+    \item \textbf{Sistema de Puesta a Tierra (Telecomunicaciones):} En cumplimiento estricto con la norma \textbf{ANSI/TIA-607-C}. Se instalará una Barra de Puesta a Tierra Principal de Telecomunicaciones (TMGB) marca \textbf{Panduit} modelo \texttt{TMGB-060} en el MDF del tercer piso, conectada directamente al pozo a tierra del edificio. El IDF del cuarto piso contará con una barra secundaria (TGB) marca \textbf{Panduit} modelo \texttt{TGB-040}.
+    \item \textbf{Vinculación (Bonding):} Todas las estructuras metálicas pasivas (chasis de racks, bandejas de fibra, blindaje de los patch panels y canaletas metálicas) se interconectarán a las barras TGB mediante conductores de cobre aislado verde de calibre 6 AWG.
+    \item \textbf{Alimentación Eléctrica Estabilizada:} Los equipos activos de los racks se alimentarán mediante Unidades de Distribución de Energía (PDU) marca \textbf{Tripp Lite} modelo \texttt{PDU1230} conectadas a un sistema UPS en línea de doble conversión marca \textbf{Tripp Lite} modelo \texttt{SU3000RTX} (3kVA), un equipo por cada gabinete (MDF e IDF).
+\end{itemize}
 
 \section{Procedimientos de certificación}
+Una vez finalizado el tendido y terminación, se procederá a la validación total del sistema:
+\begin{itemize}
+    \item \textbf{Pruebas de Cableado de Cobre:} Certificación del 100\% de los enlaces en la modalidad de \textbf{Enlace Permanente (Permanent Link)} usando un analizador de cables DSX-8000 de Fluke Networks o equivalente calibrado. Se medirán parámetros críticos: mapa de cableado, longitud, resistencia, atenuación, NEXT, PS-NEXT, ACR-F y pérdida de retorno bajo la norma ISO/IEC 11801 / TIA Cat 6A.
+    \item \textbf{Pruebas de Fibra Óptica:} Certificación de Nivel 1 mediante la medición de pérdida de inserción (atenuación) y longitud con un equipo LSPM (Fuente de luz y medidor de potencia), evaluando ambas direcciones y longitudes de onda (850 nm y 1300 nm).
+    \item \textbf{Entregables:} Reporte digital nativo generado por el software del certificador (formato .flw) libre de alteraciones, garantizando el pase ("PASS") de cada punto de red.
+\end{itemize}
