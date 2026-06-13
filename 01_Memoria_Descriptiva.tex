@@ -2,11 +2,11 @@
 
 \section{Descripción general del proyecto}
 
-El presente proyecto corresponde a la implementación de un sistema de cableado estructurado, red de datos y conectividad inalámbrica para toda la Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica de la Universidad Nacional de San Antonio Abad del Cusco, ubicada en la Ciudad Universitaria de Perayoc. La memoria se desarrolla tomando como base los planos disponibles de la Escuela Profesional de Ingeniería Informática y de Sistemas, los cuales presentan la estructura del pabellón y sirven como soporte para el trazado de canalizaciones, rutas y puntos de red.
+El presente proyecto corresponde a la implementación de un sistema de cableado estructurado, red de datos y conectividad inalámbrica para los niveles segundo, tercero y cuarto del pabellón de la Escuela Profesional de Ingeniería Informática y de Sistemas de la Universidad Nacional de San Antonio Abad del Cusco, ubicada en la Ciudad Universitaria de Perayoc. La memoria se desarrolla tomando como base los planos disponibles de la Escuela Profesional, los cuales presentan la estructura del pabellón y sirven como soporte para el trazado de canalizaciones, rutas y puntos de red.
 
-El proyecto contempla la instalación de un backbone de fibra óptica, cableado horizontal de cobre, puntos de telecomunicaciones en ambientes académicos y administrativos, gabinetes de comunicaciones, switches de acceso y distribución, así como puntos de acceso inalámbrico para cobertura Wi-Fi. Se consideran asimismo las rutas de bandejas, tuberías y pasos técnicos para asegurar un despliegue ordenado y compatible con la infraestructura existente.
+El proyecto contempla la instalación de un backbone de fibra óptica multimodo OM4 que interconecta el Distribuidor Principal (MDF) ubicado en el segundo piso con los Distribuidores de Piso (IDF) del tercer y cuarto nivel, cableado horizontal de cobre F/UTP Categoría 6A, puntos de telecomunicaciones en ambientes académicos y administrativos, gabinetes de comunicaciones, switches de acceso y distribución PoE+, así como puntos de acceso inalámbrico WiFi 6 para cobertura. Se consideran asimismo las rutas de escalerillas tipo malla, canaletas PVC, tuberías conduit y pasos técnicos para asegurar un despliegue ordenado y compatible con la infraestructura existente.
 
-La intervención no modifica la estructura arquitectónica, sino que incorpora infraestructura tecnológica para asegurar conectividad, disponibilidad y crecimiento futuro. Se propone una implementación por niveles, definiendo claramente rutas, áreas técnicas y puntos de servicio en cada piso.
+La intervención no modifica la estructura arquitectónica, sino que incorpora infraestructura tecnológica para asegurar conectividad, disponibilidad y crecimiento futuro. Se propone una implementación por niveles, definiendo claramente rutas, áreas técnicas y puntos de servicio en cada piso. El proyecto contempla un total aproximado de \textbf{255 puntos de red}, con una proyección presupuestal de \textbf{270 puntos} que incluye holgura para crecimiento e imprevistos.
 
 \section{Objetivos de la obra}
 
@@ -27,36 +27,37 @@ Los objetivos específicos son los siguientes:
 
 El proyecto se ubica en la Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica de la Universidad Nacional de San Antonio Abad del Cusco, dentro de la Ciudad Universitaria de Perayoc, distrito, provincia y departamento del Cusco.
 
-El área de intervención comprende los diferentes niveles del edificio y los ambientes académicos, administrativos y de servicios, de acuerdo con los planos arquitectónicos de referencia:
+El área de intervención comprende los niveles segundo, tercero y cuarto del pabellón de la Escuela Profesional de Ingeniería Informática y de Sistemas, abarcando los ambientes académicos, administrativos y de servicios descritos a continuación:
 
 \begin{itemize}
-    \item \textbf{Primer nivel:} instalación de puntos de red en ambientes administrativos, aulas, zonas de circulación y servicios, con rutas de canalización hacia el gabinete principal.
-    \item \textbf{Segundo nivel:} despliegue de cableado horizontal hacia aulas y talleres, con puntos de acceso inalámbrico para cobertura.
-    \item \textbf{Tercer nivel:} instalación de tomas de datos, gabinetes secundarios y enlaces de backbone hacia el gabinete principal.
-    \item \textbf{Cuarto nivel:} puntos de red para ambientes superiores y rutas técnicas para enlaces de backbone y alimentación de equipos.
-    \item \textbf{Nivel de techos:} paso de canalizaciones y rutas de soporte cuando sea necesario para enlaces verticales o equipos de telecomunicaciones.
+    \item \textbf{Segundo nivel (Nivel principal de red):} alberga el Distribuidor Principal de Cableado (MDF) del proyecto, desde donde se distribuye el backbone hacia los pisos superior e inferior. Los ambientes intervenidos incluyen las aulas académicas (201, 202, 203, 206), los laboratorios (207, 208), la biblioteca y la sala de lectura. Se proyectan aproximadamente \textbf{60 puntos de red}.
+    \item \textbf{Tercer nivel (Alta densidad académica):} concentra la mayor cantidad de laboratorios de cómputo de la facultad (ambientes 301 a 306 y 309 a 312), la sala de docentes, la sala de exposiciones y la jefatura de capacitación informática. Cuenta con un Distribuidor de Piso (IDF) secundario y aloja los servidores locales. Se proyectan aproximadamente \textbf{135 puntos de red}.
+    \item \textbf{Cuarto nivel (Gestión e investigación):} comprende los cubículos de docentes (401 a 408), el auditorio principal, la cabina de control de cámaras, el laboratorio de investigación (419), los círculos de estudio, la secretaría de escuela y la cocineta. Cuenta con un Distribuidor de Piso (IDF) dedicado. Se proyectan aproximadamente \textbf{60 puntos de red}.
 \end{itemize}
 
-La intervención se concentra en el trazado de rutas de cableado, ubicación de gabinetes y puntos de red, sin alterar la estructura arquitectónica existente.
+El alcance total de puntos de red asciende a \textbf{255 puntos} distribuidos en los tres niveles, redondeados a \textbf{270 puntos} en el presupuesto para holgura de crecimiento, imprevistos y puntos de cortesía. La intervención se concentra en el trazado de rutas de cableado, ubicación de gabinetes y puntos de red, sin alterar la estructura arquitectónica existente.
 
 \section{Alcances del proyecto}
 
-El alcance del proyecto comprende la implementación completa de la infraestructura de cableado y red en la Facultad de Ingeniería Eléctrica, Electrónica, Informática y Mecánica, considerando la instalación física y la configuración básica para operación.
+El alcance del proyecto comprende la implementación completa de la infraestructura de cableado y red en los niveles segundo, tercero y cuarto del pabellón de la Escuela Profesional de Ingeniería Informática y de Sistemas, considerando la instalación física, certificación y configuración básica para operación.
 
 Los principales alcances son los siguientes:
 
 \begin{itemize}
-    \item Levantamiento de información técnica y definición de puntos de red por ambiente.
-    \item Diseño de rutas de canalización, bandejas, tuberías y pasos técnicos compatibles con la estructura existente.
-    \item Suministro e instalación de cableado horizontal de cobre y cableado backbone de fibra óptica.
-    \item Instalación de gabinetes de comunicaciones, racks, patch panels, organizadores y accesorios.
-    \item Instalación de tomas de usuario (placas, conectores y faceplates) y su respectivo etiquetado.
-    \item Implementación de equipos activos de red (switches de acceso y puntos de acceso inalámbrico).
-    \item Pruebas, certificación y documentación de la red instalada.
-    \item Entrega de planos actualizados y documentación de administración del cableado.
+    \item Levantamiento de información técnica y definición de \textbf{255 puntos de red} (redondeados a 270 en presupuesto) distribuidos en los tres niveles de intervención.
+    \item Diseño de rutas de canalización principal (escalerillas tipo malla), canalización secundaria (canaletas PVC con división física), tuberías conduit para backbone y registros de paso.
+    \item Suministro e instalación de cableado horizontal \textbf{F/UTP Cat 6A LSZH} para datos, telefonía IP y CCTV.
+    \item Suministro e instalación de cableado backbone de \textbf{fibra óptica multimodo OM4} entre el MDF (segundo piso) y los IDF (tercer y cuarto piso).
+    \item Instalación de \textbf{tres gabinetes} de telecomunicaciones: MDF de 42U en segundo piso, IDF de 24U en tercer piso e IDF de 24U en cuarto piso, incluyendo patch panels, organizadores y sistema de puesta a tierra.
+    \item Instalación de tomas de usuario (faceplates de 2 puertos con iconografía, jacks Cat 6A blindados, cajas superficiales PVC) y su respectivo etiquetado bajo norma ANSI/TIA-606-C.
+    \item Implementación de equipos activos de red (switches PoE+ Cisco Catalyst 9200, puntos de acceso WiFi 6, cámaras IP de vigilancia, NVR y UPS).
+    \item Sistema completo de \textbf{puesta a tierra para telecomunicaciones} (TMGB, TGB, conductores 6 AWG y bonding de estructuras metálicas), conforme a ANSI/TIA-607-D.
+    \item Pruebas, certificación del 100\% de los enlaces con equipo Fluke DSX-8000 y documentación de la red instalada.
+    \item Elaboración de planos As-Built, planos de racks (front-view), diagramas de backbone, detalles constructivos de canalizaciones y diagrama de puesta a tierra.
+    \item Entrega de dossier de certificación, manual de operación y mantenimiento, y documentación de administración del cableado.
 \end{itemize}
 
-El proyecto no contempla modificaciones estructurales mayores del edificio; las intervenciones se limitan a canalizaciones, soportes y pasos técnicos necesarios para el cableado.
+El proyecto no contempla modificaciones estructurales mayores del edificio; las intervenciones se limitan a canalizaciones adosadas, soportes y pasos técnicos necesarios para el cableado.
 
 \section{Justificación técnica y beneficios}
 
