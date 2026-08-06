@@ -2,8 +2,131 @@
 
 \section{Estudio de canalizaciones existentes}
 
+Previo al inicio de la instalación, se ha realizado un análisis de la infraestructura de vías y espacios de telecomunicaciones existente en el Pabellón de Ingeniería Informática y de Sistemas. El objetivo de este estudio es determinar la viabilidad técnica de reutilizar ductos empotrados o bandejas actuales, garantizando el cumplimiento del estándar ANSI/TIA-569-D.
+
+\subsection*{Metodología de Evaluación}
+
+El estudio se fundamenta en la contrastación de los planos arquitectónicos ``As-Built'' (2016) proporcionados por la Facultad versus la inspección visual in situ de las rutas críticas. Se evaluaron tres factores determinantes:
+
+\begin{enumerate}
+    \item \textbf{Factor de Llenado (Fill Ratio):} Verificación de que la ocupación de cables no supere el 40\% de la sección transversal del ducto.
+    \item \textbf{Integridad Física:} Estado de conservación de bandejas, soportes y tuberías empotradas.
+    \item \textbf{Radio de Curvatura:} Validación de curvas en ductos existentes para asegurar que permitan el paso de cable Categoría 6A sin estrangulamiento.
+\end{enumerate}
+
+\subsection*{Diagnóstico de la Infraestructura Actual}
+
+Del relevamiento técnico en los cuatro niveles, se desprenden las siguientes observaciones:
+
+\begin{itemize}
+    \item \textbf{Ductería Empotrada (Paredes):}
+    \begin{itemize}
+        \item \textbf{Estado:} La mayoría de las tuberías empotradas originales (destinadas a telefonía analógica o red Cat 5e antigua) presentan diámetros reducidos (3/4'' o 1/2'').
+        \item \textbf{Compatibilidad Cat 6A:} El cable U/UTP Cat 6A posee un diámetro exterior nominal de 7.2 mm a 8.0 mm. Los ductos existentes de 1/2'' son insuficientes para alojar dos cables de datos (necesarios para puntos dobles) respetando el factor de llenado del 40\%.
+        \item \textbf{Conclusión:} Se descarta la reutilización masiva de la ductería empotrada para los nuevos puntos de red, justificando la partida de canalización secundaria adosada (canaletas externas) considerada en el presupuesto.
+    \end{itemize}
+    \item \textbf{Rutas Verticales (Montantes):}
+    \begin{itemize}
+        \item Se identificaron los pases entre losas (buzones) que conectan el Nivel 1 con el Nivel 4.
+        \item \textbf{Observación:} Se requiere la instalación de ordenadores verticales o escalerillas adicionales en los ductos montantes, ya que los existentes presentan congestión por cableado eléctrico y de redes antiguas, lo cual contraviene las normas de separación de servicios.
+    \end{itemize}
+    \item \textbf{Bandejas Portacables en Pasillos (Horizontal Principal):}
+    \begin{itemize}
+        \item En los pasillos principales de distribución (especialmente Nivel 2 y 3), se verificará la capacidad de carga de las bandejas existentes. Debido al peso lineal superior del cobre Cat 6A, se recomienda reforzar la soportación cada 1.5 metros si se opta por utilizar tramos existentes.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Dictamen Técnico}
+
+Basado en el estudio, se dictamina que la infraestructura de canalización empotrada existente NO es apta para soportar el nuevo sistema de cableado estructurado de alto rendimiento, debido principalmente a limitaciones de diámetro y radio de curvatura.
+
+Por lo tanto, el proyecto procederá con la implementación de un sistema independiente de canalización sobrepuesta (canaletas de PVC autoextinguible con accesorios de radio controlado), garantizando así la integridad de la transmisión a 10 Gbps sin depender de las limitaciones arquitectónicas del edificio construido en 2016.
+
 \section{Análisis de interferencias electromagnéticas}
 
+Dada la naturaleza de la transmisión de alta velocidad (10GBASE-T) que opera a frecuencias de hasta 500 MHz, el sistema es susceptible a la degradación por Interferencia Electromagnética (EMI) y Radiofrecuencia (RFI). Este estudio identifica las fuentes de ruido en el Pabellón y establece los protocolos de mitigación necesarios para proteger el cableado U/UTP Categoría 6A.
+
+\subsection*{Identificación de Fuentes de Ruido en el Edificio}
+
+Tras la inspección de los planos arquitectónicos y eléctricos de los cuatro niveles, se han categorizado las siguientes fuentes potenciales de perturbación electromagnética que coexisten con la ruta del cableado estructurado:
+
+\begin{enumerate}
+    \item \textbf{Iluminación Fluorescente/LED:} Balastos y drivers antiguos ubicados en los falsos techos de aulas y pasillos.
+    \item \textbf{Tableros Eléctricos de Distribución:} Ubicados estratégicamente en zonas comunes y laboratorios (Nivel 3).
+    \item \textbf{Motores Eléctricos:} Sistemas de bombeo o ventilación forzada (si los hubiere) y posibles interferencias de equipos de laboratorio.
+    \item \textbf{Cableado Eléctrico de Baja Tensión (220V):} Circuitos de tomacorrientes que alimentan las computadoras en los laboratorios de alta densidad.
+\end{enumerate}
+
+\subsection*{Evaluación del Riesgo para Categoría 6A (Alien Crosstalk)}
+
+Además del ruido externo, el principal desafío técnico para el cableado Categoría 6A U/UTP es el Alien Crosstalk (AXT) o Diafonía Exógena.
+
+\begin{itemize}
+    \item \textbf{Definición:} Es la interferencia electromagnética que un cable induce sobre otro cable adyacente dentro del mismo mazo o canaleta.
+    \item \textbf{Riesgo Detectado:} En los tramos principales (salida del gabinete hacia los laboratorios del Nivel 3), se formarán mazos densos de cables. Si estos se agrupan apretadamente sin precaución, el ruido inducido degradará la señal, impidiendo la certificación a 10 Gbps.
+\end{itemize}
+
+\subsection*{Estrategia de Mitigación y Cumplimiento Normativo}
+
+Para neutralizar estos riesgos sin recurrir a costosos cables blindados, el diseño implementa estrictamente las distancias de separación dictadas por la norma ANSI/TIA-569-D:
+
+\begin{enumerate}
+    \item \textbf{Segregación de Servicios:}
+    \begin{itemize}
+        \item Se mantendrá una separación física mínima de 200 mm (8 pulgadas) entre el cableado de datos Cat 6A y cualquier línea eléctrica de potencia no blindada (220V) que corra en paralelo.
+        \item En áreas de espacio reducido donde la separación de 200 mm no sea viable, se instalarán barreras físicas (divisores metálicos o canaletas de compartimientos separados) conectadas a tierra.
+    \end{itemize}
+    \item \textbf{Cruces Perpendiculares:}
+    \begin{itemize}
+        \item Cualquier intersección necesaria entre la ruta de datos y los circuitos eléctricos se ejecutará obligatoriamente en un ángulo de 90 grados para anular la inducción magnética.
+    \end{itemize}
+    \item \textbf{Control del Alien Crosstalk (AXT):}
+    \begin{itemize}
+        \item \textbf{Gestión de Mazos:} Se prohíbe el uso de cintillos plásticos apretados (zip ties) que deformen la geometría del cable. Se utilizará exclusivamente sujeción con Velcro de forma holgada.
+        \item \textbf{Factor de Llenado:} Se limitará la ocupación de las canaletas al 40\% para permitir que los cables se acomoden aleatoriamente (``random lay''), lo cual reduce naturalmente la alineación de pares y cancela el ruido entre cables vecinos.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Conclusión del Análisis}
+
+El entorno electromagnético del Pabellón de Ingeniería Informática se clasifica como MICE 1 (Entorno de Oficina/Comercial). Bajo esta clasificación, y aplicando rigurosamente las distancias de separación y técnicas de instalación descritas, el cableado U/UTP Categoría 6A propuesto operará con márgenes de seguridad óptimos, sin requerir apantallamiento adicional.
+
 \section{Evaluación de infraestructura para racks y UPS}
-Si aplica: estudio de canalizaciones existentes, cargas en bandejas, interferencias
-electromagnéticas.
+
+Para asegurar la operatividad y mantenibilidad de los Centros de Cableado (IDF/MDF) proyectados en los cuatro niveles, se ha realizado una evaluación de las condiciones físicas y ambientales de los espacios designados, verificando su conformidad con los estándares ANSI/TIA-569-D (Espacios de Telecomunicaciones) y las cargas eléctricas estimadas.
+
+\subsection*{Análisis de Espacios y Dimensionamiento (Footprint)}
+
+Se ha verificado la ubicación propuesta para los Gabinetes Cerrados de 19'' (Enclosures) en los planos de planta, validando los siguientes criterios de habitabilidad:
+
+\begin{itemize}
+    \item \textbf{Profundidad Efectiva:} Considerando que los equipos activos y el cableado Cat 6A requieren gabinetes de 1000 mm a 1100 mm de profundidad, se confirmó que los espacios seleccionados permiten esta instalación sin obstruir el tránsito en pasillos o salidas de emergencia.
+    \item \textbf{Áreas de Trabajo (Clearance):} Se ha validado que existe un espacio libre mínimo de 1.0 metros tanto en la parte frontal como posterior del gabinete proyectado. Este espacio es mandatorio para permitir:
+    \begin{itemize}
+        \item La apertura total de las puertas para mantenimiento.
+        \item El ingreso de aire frío para la ventilación de los equipos.
+        \item La maniobra técnica segura durante la certificación y parcheo.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Evaluación Estructural y Sísmica}
+
+Considerando la ubicación del proyecto en Cusco (Zona Sísmica), se establecen los siguientes requisitos de infraestructura civil para el anclaje de los racks:
+
+\begin{enumerate}
+    \item \textbf{Capacidad Portante del Piso:} Se estima que un gabinete completamente equipado (Switches + UPS + Baterías) puede alcanzar un peso dinámico de 150 kg a 250 kg. Se ha verificado visualmente que las losas de concreto de los ambientes técnicos (especialmente en el Nivel 2 y 3) no presentan grietas estructurales y son aptas para soportar esta carga puntual.
+    \item \textbf{Anclaje Antisísmico:} La infraestructura existente permite la fijación de los gabinetes al piso mediante pernos de expansión (tipo Hilti o similar) de 3/8'' o 1/2''. En el caso de racks adosados a pared (si los hubiera en Nivel 4), se requerirá verificar que el muro sea de concreto o ladrillo macizo (no Drywall) para soportar el torque de carga.
+\end{enumerate}
+
+\subsection*{Previsión para Sistemas de Energía (UPS)}
+
+Aunque la provisión de UPS es una etapa posterior, el estudio de cargas eléctricas define los requerimientos mínimos que la instalación eléctrica del edificio debe cumplir para recibirlos:
+
+\begin{enumerate}
+    \item \textbf{Estimación de Carga Térmica y Eléctrica:}
+    \begin{itemize}
+        \item \textbf{IDF Típico (Niveles 1, 4):} Se proyecta una carga de consumo de 1.5 kVA, requiriendo una toma eléctrica dedicada tipo NEMA 5-15R o L5-20R con tierra aislada.
+        \item \textbf{MDF/IDF Denso (Niveles 2, 3):} Debido a la alta densidad de switches PoE para los laboratorios y APs, se estima una carga de 3 kVA. La infraestructura eléctrica debe contar con circuitos independientes de 20A o 30A para evitar disparos de llaves térmicas al encender los equipos.
+    \end{itemize}
+    \item \textbf{Ventilación:} Se ha constatado que los recintos designados requieren ventilación asistida (extractores o aire acondicionado) para disipar el calor generado por los equipos activos y las baterías de los futuros UPS, evitando la degradación de la vida útil de los componentes electrónicos.
+\end{enumerate}

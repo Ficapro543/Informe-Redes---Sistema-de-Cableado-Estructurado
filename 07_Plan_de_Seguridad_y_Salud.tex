@@ -2,8 +2,127 @@
 
 \section{Normas de seguridad eléctrica y física}
 
+La ejecución del proyecto de cableado estructurado en el Pabellón de Ingeniería Informática implica riesgos inherentes, tanto por trabajos en altura como por la interacción con sistemas eléctricos. Por ello, se establece el cumplimiento obligatorio de las siguientes normativas para salvaguardar la integridad del personal técnico, la comunidad universitaria y los activos de la red.
+
+\subsection*{Seguridad Eléctrica (NFPA 70 / NEC)}
+
+El cumplimiento del Código Eléctrico Nacional (NFPA 70) y el Código Nacional de Electricidad del Perú es mandatorio para prevenir riesgos de electrocución y conatos de incendio.
+
+\begin{itemize}
+    \item \textbf{Desenergización y Bloqueo (Lockout/Tagout):} Antes de intervenir en cualquier gabinete o ducto compartido, se deberá verificar la ausencia de tensión. Está prohibido manipular cableado de datos si este se encuentra mezclado con cables eléctricos activos sin el aislamiento adecuado.
+    \item \textbf{Puesta a Tierra (ANSI/TIA-607-D):} Todo componente metálico (gabinetes, bandejas, racks) deberá estar firmemente conectado a la barra de tierra.
+    \begin{itemize}
+        \item \textbf{Importancia Crítica:} Una mala puesta a tierra no solo daña los equipos activos (Switches) por descargas estáticas, sino que puede convertir un gabinete en un conductor letal si un cable eléctrico vivo toca el chasis accidentalmente.
+    \end{itemize}
+    \item \textbf{Separación de Fuentes:} Se mantendrá la distancia mínima reglamentaria entre el cableado de datos y el de energía para evitar inducción y calentamiento, reduciendo el riesgo de incendio por arco eléctrico.
+\end{itemize}
+
+\subsection*{Seguridad Física y Equipos de Protección Personal (EPP)}
+
+Dado que el trabajo implica el uso de herramientas de potencia, escaleras y manipulación de fibra/cobre, se exige el uso permanente de EPPs certificados:
+
+\begin{itemize}
+    \item \textbf{Protección de Cabeza y Ojos:} Casco de seguridad (Norma ANSI Z89.1) y lentes de policarbonato anti-impacto.
+    \begin{itemize}
+        \item \textbf{Importancia:} Vital durante la perforación de muros y techos para evitar lesiones oculares por esquirlas de concreto o restos de fibra óptica (que son invisibles y peligrosos si entran al torrente sanguíneo o los ojos).
+    \end{itemize}
+    \item \textbf{Protección de Manos y Pies:} Guantes de seguridad para trabajos mecánicos (evitar cortes con las latas de los gabinetes o hilos de tracción) y calzado dieléctrico con punta reforzada.
+    \item \textbf{Trabajos en Altura:} Para la instalación de canaletas o cableado en techos (especialmente en pasillos y laboratorios), cualquier labor por encima de 1.80 metros requerirá el uso de escaleras certificadas de fibra de vidrio (no conductoras) y arnés de seguridad si la situación lo amerita.
+\end{itemize}
+
+\subsection*{Importancia de la Normativa de Seguridad}
+
+La adhesión estricta a estas normas trasciende el cumplimiento legal; es un pilar operativo del proyecto por tres razones fundamentales:
+
+\begin{enumerate}
+    \item \textbf{Protección de la Vida Humana:} El objetivo principal es ``Cero Accidentes''. Un choque eléctrico o una caída pueden ser fatales.
+    \item \textbf{Protección de la Inversión:} Los equipos de certificación (Fluke) y los Switches 10G son extremadamente sensibles. La seguridad eléctrica (tierra y aislamiento) evita que estos equipos de miles de dólares se quemen al conectarlos.
+    \item \textbf{Continuidad Académica:} Al ser un pabellón en uso o próximo a usarse, un accidente laboral podría paralizar la obra o clausurar el edificio, afectando las actividades de la Facultad. La seguridad garantiza que el cronograma se cumpla sin interrupciones por incidentes.
+\end{enumerate}
+
 \section{Procedimientos para trabajos en altura y canalizaciones}
 
+Con el fin de mitigar los riesgos asociados a la instalación física de la infraestructura en los cuatro niveles del pabellón, se aplicarán los siguientes protocolos operativos estandarizados.
+
+\subsection*{Protocolo para Trabajo en Altura}
+
+Se considera trabajo en altura a toda labor que se realice a partir de 1.80 metros sobre el nivel del suelo (ej. instalación de cámaras CCTV, Access Points en techo o paso de cableado por bandejas superiores).
+
+\begin{enumerate}
+    \item \textbf{Inspección Previa:} Antes de ascender, el técnico debe verificar que la escalera o andamio se encuentre en perfectas condiciones (zapatas antideslizantes intactas, peldaños sin grietas y mecanismos de bloqueo funcionales).
+    \item \textbf{Uso de Escaleras:}
+    \begin{itemize}
+        \item Se utilizarán exclusivamente escaleras de fibra de vidrio (dieléctricas) tipo tijera o extensibles. Queda prohibido el uso de escaleras metálicas o de madera improvisadas.
+        \item \textbf{Regla de los 3 Puntos:} El personal deberá mantener siempre al menos tres puntos de contacto (dos manos y un pie, o dos pies y una mano) durante el ascenso y descenso.
+    \end{itemize}
+    \item \textbf{Sistema de Protección Contra Caídas:} Para trabajos sostenidos en zonas de riesgo (bordes de losa o techos exteriores para antenas), será obligatorio el uso de arnés de cuerpo entero con línea de vida anclada a un punto estructural resistente (resistencia mínima de 5000 libras).
+\end{enumerate}
+
+\subsection*{Protocolo para Instalación de Canalizaciones (Perforación y Fijación)}
+
+La instalación de tuberías PVC y canaletas requiere el uso de herramientas de potencia y fijación mecánica, lo cual genera riesgos de proyección de partículas y ruido.
+
+\begin{enumerate}
+    \item \textbf{Detección de Interferencias:} Antes de realizar cualquier perforación en muros o columnas, se utilizará un escáner de pared (detector de metales/voltaje) para asegurar que no existan tuberías de agua o ductos eléctricos empotrados, evitando cortocircuitos o inundaciones.
+    \item \textbf{Manejo de Herramientas de Poder:}
+    \begin{itemize}
+        \item Los taladros y rotomartillos deberán contar con empuñaduras auxiliares para evitar torceduras de muñeca en caso de bloqueo de la broca.
+        \item Es mandatorio el uso de gafas de seguridad herméticas (Goggles) y protección respiratoria (mascarilla N95) para evitar la inhalación de polvo de concreto o ladrillo.
+    \end{itemize}
+    \item \textbf{Cortes Limpios:} El corte de canaletas y tuberías se realizará en una mesa de trabajo designada, utilizando guantes anticorte nivel 5. Nunca se realizarán cortes apoyando el material sobre el cuerpo o piernas.
+\end{enumerate}
+
+\subsection*{Delimitación del Área de Trabajo}
+
+Considerando que la intervención se realiza en un entorno universitario:
+
+\begin{itemize}
+    \item Se instalarán cintas de seguridad amarilla (``PELIGRO - HOMBRES TRABAJANDO'') y conos para aislar el radio de acción de las herramientas y escaleras.
+    \item Se prohibirá estrictamente el tránsito de estudiantes o personal administrativo debajo de la zona donde se estén realizando trabajos en altura para prevenir accidentes por caída de herramientas o materiales.
+\end{itemize}
+
 \section{Plan de prevención de riesgos}
-Medidas de seguridad eléctrica y física durante la instalación.
-Procedimientos para evitar daño en sistemas existentes.
+
+Este plan consolida las estrategias operativas destinadas a eliminar o minimizar la probabilidad de accidentes y daños materiales durante la ejecución del proyecto. Se estructura en dos ejes de acción: control de seguridad durante la instalación y protocolos de protección a la infraestructura existente.
+
+\subsection*{Medidas de seguridad eléctrica y física durante la instalación}
+
+Para garantizar la aplicación efectiva de las normas descritas en los puntos anteriores, se implementará el siguiente ciclo de control diario:
+
+\begin{enumerate}
+    \item \textbf{Charla de Seguridad de 5 Minutos (Inicio de Jornada):}
+    \begin{itemize}
+        \item Antes de iniciar labores, el Supervisor de Obra reunirá al personal para identificar los riesgos específicos del día (ej. ``Hoy trabajaremos en el techo del laboratorio 305'').
+        \item Se verificará el estado anímico y físico del personal.
+    \end{itemize}
+    \item \textbf{Check-List de Herramientas y EPP:}
+    \begin{itemize}
+        \item Revisión obligatoria del aislamiento de herramientas manuales (destornilladores, alicates).
+        \item Verificación de la integridad de las escaleras de fibra de vidrio y arneses. Herramienta dañada será retirada inmediatamente de la obra.
+    \end{itemize}
+    \item \textbf{Señalización y Bloqueo (LOTO):}
+    \begin{itemize}
+        \item En caso de intervenir cerca de tableros eléctricos, se aplicará el procedimiento de Bloqueo y Etiquetado (Lockout/Tagout) para asegurar que nadie energice un circuito accidentalmente mientras se trabaja.
+        \item Delimitación física del área de trabajo con conos y cintas para evitar que estudiantes o docentes tropiecen con herramientas o materiales.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Procedimientos para evitar daño en sistemas existentes}
+
+\begin{enumerate}
+    \item \textbf{Protección contra Polvo y Residuos (Laboratorios):}
+    \begin{itemize}
+        \item \textbf{Cobertura:} Antes de perforar paredes o techos en los laboratorios (Nivel 3), se cubrirán todos los equipos de cómputo, monitores y mobiliario con plásticos protectores de alto calibre para evitar el ingreso de polvillo de concreto a los componentes electrónicos.
+        \item \textbf{Aspirado en la Fuente:} Se utilizarán taladros con recolectores de polvo o aspiradoras industriales simultáneas a la perforación para minimizar la nube de polvo.
+    \end{itemize}
+    \item \textbf{Cuidado de la Red Eléctrica y de Datos Actual:}
+    \begin{itemize}
+        \item \textbf{Escaneo de Muros:} Uso obligatorio de detectores de metales/voltaje antes de fijar canaletas para evitar perforar tuberías de agua o cables eléctricos empotrados.
+        \item \textbf{Gestión de Cableado Antiguo:} Si se requiere retirar cableado obsoleto, se realizará un ``trazado'' previo para asegurar que no se desconecte ningún servicio activo por error. No se cortará ningún cable sin la autorización expresa del encargado de laboratorio.
+    \end{itemize}
+    \item \textbf{Restauración de Acabados:}
+    \begin{itemize}
+        \item Cualquier daño accidental a la pintura o mampostería causado por la instalación de canaletas será reparado y resanado para dejar el ambiente en iguales o mejores condiciones que las encontradas.
+        \item Al finalizar el día, se retirarán todos los escombros y recortes de cable, dejando las aulas y pasillos limpios y seguros para el tránsito académico.
+    \end{itemize}
+\end{enumerate}

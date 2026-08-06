@@ -2,11 +2,173 @@
 
 \section{Procedimientos de prueba}
 
+El aseguramiento de la calidad de la infraestructura de red se ejecutará mediante un protocolo estricto dividido en tres fases: Inspección Visual, Configuración Instrumental y Certificación Electrónica.
+
+\subsection*{Fase 1: Inspección Visual Preliminar}
+
+Antes de conectar el equipo certificador, se realizará una validación física para asegurar que la instalación cumple con las buenas prácticas de manufactura y los estándares ANSI/TIA-568.2-D y ANSI/TIA-569-D.
+
+\begin{itemize}
+    \item \textbf{Integridad del Cable:} Verificación de que la chaqueta del cable no presente cortes, abrasiones, quemaduras o deformaciones causadas por una tracción excesiva durante el tendido.
+    \item \textbf{Radio de Curvatura:} Confirmación de que ningún mazo de cables exceda el radio de curvatura mínimo (4 veces el diámetro del cable) en las esquinas, subidas a gabinetes o ingresos a cajas de paso.
+    \item \textbf{Terminaciones:} Inspección de los Jacks RJ45 en el Patch Panel y en el Área de Trabajo para asegurar que el destrenzado de los pares no supere los 13 mm (0.5 pulgadas) y que el código de colores T568B se haya respetado.
+    \item \textbf{Identificación:} Validación de que todos los puntos (Faceplates y Paneles) cuenten con sus etiquetas provisionales o definitivas según la norma ANSI/TIA-606-C.
+\end{itemize}
+
+\subsection*{Fase 2: Configuración del Equipo de Certificación}
+
+Se utilizará un analizador de cableado de Nivel IV (ej. Fluke Networks DSX-8000 o equivalente) con calibración vigente.
+
+\begin{itemize}
+    \item \textbf{Configuración de Prueba:} Enlace Permanente (Permanent Link).
+    \begin{itemize}
+        \item \textbf{Justificación:} Se excluyen los patch cords de prueba para medir únicamente la infraestructura fija instalada (del Patch Panel al Jack de usuario), que es la responsabilidad del instalador.
+    \end{itemize}
+    \item \textbf{Tipo de Cable:} U/UTP Cat 6A LSZH.
+    \item \textbf{NVP (Nominal Velocity of Propagation):} Se ajustará el valor NVP según la ficha técnica del fabricante del cable suministrado (típicamente entre 65\% y 72\%) para asegurar una medición precisa de la longitud.
+    \item \textbf{Estándar Límite:} TIA Cat 6A Perm. Link (+PoE), para validar no solo datos sino también la capacidad de soportar alimentación eléctrica (PoE) sin sobrecalentamiento.
+\end{itemize}
+
+\subsection*{Fase 3: Ejecución de Pruebas de Desempeño (Autotest)}
+
+Se ejecutará la secuencia de Autotest en el 100\% de los nodos (aprox. 310 puntos), evaluando los siguientes parámetros críticos para la operación a 500 MHz:
+
+\begin{enumerate}
+    \item \textbf{Mapa de Cableado (Wire Map):} Verifica continuidad pin a pin, cortocircuitos, pares abiertos, pares cruzados y pares divididos (split pairs).
+    \item \textbf{Longitud (Length):} Confirma que el enlace no supere los 90 metros.
+    \item \textbf{Pérdida de Inserción (Insertion Loss):} Mide la atenuación de la señal a medida que viaja por el cable.
+    \item \textbf{Pérdida de Retorno (Return Loss):} Mide la energía reflejada causada por diferencias de impedancia (crítico para 10 Gbps).
+    \item \textbf{Diafonía (NEXT - Near End Crosstalk):} Mide la interferencia de un par sobre otro en el extremo cercano.
+    \item \textbf{Suma de Potencia de Diafonía (PS NEXT):} Crítico en Cat 6A, mide el efecto combinado de tres pares interfiriendo sobre el cuarto par.
+    \item \textbf{ACR-N y ACR-F:} Relación Atenuación-Diafonía en extremos cercano y lejano.
+\end{enumerate}
+
+\subsection*{Protocolo de Corrección de Fallas}
+
+En caso de que un punto obtenga el resultado FALLA (FAIL) o PASA (Marginal)*:
+
+\begin{enumerate}
+    \item \textbf{Diagnóstico:} Utilizar la función de diagnóstico del equipo (ej. HDTDX/HDTDR) para localizar la distancia exacta de la falla (si es en el conector o a mitad del cable).
+    \item \textbf{Acción Correctiva:}
+    \begin{itemize}
+        \item Falla en extremos: Re-terminar el conector (Jack/Panel) manteniendo el trenzado hasta el punto de contacto.
+        \item Falla en cable: Si se detecta daño físico en el trayecto, el cable deberá ser reemplazado en su totalidad (no se aceptan empalmes).
+    \end{itemize}
+    \item \textbf{Re-certificación:} Una vez corregido, el punto debe ser probado nuevamente y guardado solo cuando el resultado sea ``PASA'' sólido.
+\end{enumerate}
+
 \section{Protocolos de certificación}
+
+Para asegurar la conformidad del sistema de cableado estructurado con los requisitos de desempeño para 10GBASE-T, se establecen los siguientes protocolos mandatarios que regirán la aceptación de la obra.
+
+\subsection*{Estándar de Referencia Principal}
+
+El protocolo de prueba se configurará estrictamente bajo los parámetros de la norma ANSI/TIA-568.2-D para la Categoría 6A.
+
+\begin{itemize}
+    \item \textbf{Rango de Frecuencia:} Las pruebas de barrido se realizarán desde 1 MHz hasta 500 MHz.
+    \item \textbf{Aplicación Soportada:} El protocolo debe validar matemáticamente la capacidad del canal para soportar el estándar IEEE 802.3an (10 Gigabit Ethernet).
+\end{itemize}
+
+\subsection*{Topología de Prueba: Enlace Permanente (Permanent Link)}
+
+Se define el Enlace Permanente como la parte fija de la red instalada, excluyendo los patch cords de usuario y de equipos. Este será el único protocolo válido para la certificación de la instalación.
+
+\begin{itemize}
+    \item \textbf{Punto de Inicio:} Adaptador de prueba conectado directamente al Patch Panel en el Gabinete (IDF/MDF).
+    \item \textbf{Punto Final:} Adaptador de prueba conectado a la toma de telecomunicaciones (Jack RJ45) en el Área de Trabajo.
+    \item \textbf{Límite Físico:} La longitud máxima del enlace permanente no debe exceder los 90 metros. Cualquier enlace superior a esta distancia será considerado ``FALLA'' automáticamente por el protocolo.
+\end{itemize}
+
+\subsection*{Criterios de Aceptación y Margen de Seguridad}
+
+\begin{itemize}
+    \item \textbf{Resultado ``PASA'' (PASS):} Solo se aceptarán enlaces que obtengan este resultado de manera inequívoca.
+    \item \textbf{Resultado ``PASA'' (Marginal Pass)*:} Aquellos enlaces cuyo desempeño esté dentro del margen de error del equipo de medición serán considerados condicionales. El protocolo del proyecto exige que estos puntos sean revisados, re-terminados y vueltos a probar para buscar un ``PASA'' sólido, garantizando la longevidad de la instalación.
+    \item \textbf{Resultado ``FALLA'' (FAIL):} Implica la reconstrucción obligatoria del enlace (cambio de cable o conectores) sin costo adicional para la entidad.
+\end{itemize}
+
+\subsection*{Protocolo de Calibración de Equipos}
+
+El equipo de certificación (Scanner) deberá contar con:
+
+\begin{itemize}
+    \item \textbf{Certificado de Calibración:} Emitido por el fabricante o laboratorio autorizado con una antigüedad no mayor a 12 meses.
+    \item \textbf{Ajuste de Referencia:} Se deberá establecer una nueva referencia (``Set Reference'') diariamente al inicio de la jornada o cada vez que se cambien los adaptadores de enlace permanente, para eliminar la resistencia interna de los cables de prueba del equipo.
+\end{itemize}
 
 \section{Reportes de certificación esperados}
 
+La aceptación final del proyecto estará condicionada a la entrega de un Dossier de Calidad que documente el desempeño de cada uno de los 310 puntos de red instalados. Los reportes deberán cumplir con las siguientes características formales:
+
+\subsection*{Formato de Entrega (Inalterabilidad)}
+
+\begin{itemize}
+    \item \textbf{Formato Digital:} Los resultados se entregarán en formato PDF nativo generado directamente por el software de gestión del equipo certificador (ej. LinkWare PC). No se aceptarán resultados exportados a hojas de cálculo (Excel) o formatos de texto editables, para garantizar la integridad y veracidad de los datos.
+    \item \textbf{Organización:} El archivo digital estará organizado lógicamente por carpetas correspondientes a cada nivel y gabinete (IDF), facilitando la búsqueda futura de información.
+\end{itemize}
+
+\subsection*{Contenido del Reporte Detallado (Por Nodo)}
+
+Se generará una hoja de reporte individual para cada enlace probado, la cual deberá contener visual y numéricamente:
+
+\begin{enumerate}
+    \item \textbf{Identificación:} ID del punto (Etiqueta) acorde al estándar ANSI/TIA-606-C (ej. 302-D1).
+    \item \textbf{Resumen Pasa/Falla:} Resultado global claro en el encabezado.
+    \item \textbf{Gráficas de Frecuencia:} Gráficos detallados de NEXT, Return Loss y Atenuación en el dominio de la frecuencia (1-500 MHz), mostrando la línea límite del estándar y la curva de desempeño medido.
+    \item \textbf{Mapa de Cableado:} Representación gráfica de la continuidad de los 8 conductores y la pantalla (si aplica), confirmando la secuencia T568B.
+    \item \textbf{Longitud:} Distancia exacta del enlace en metros.
+    \item \textbf{Headroom (Margen):} Indicador del margen de seguridad (en dB) por encima del estándar. Un margen alto indica una instalación de excelente calidad.
+\end{enumerate}
+
+\subsection*{Información de Trazabilidad y Calibración}
+
+Cada hoja de reporte debe incluir automáticamente los metadatos de la prueba para fines de auditoría:
+
+\begin{itemize}
+    \item \textbf{Fecha y Hora:} Momento exacto de la certificación.
+    \item \textbf{Instrumento:} Modelo y Número de Serie del equipo certificador utilizado.
+    \item \textbf{Calibración:} Fecha de la última calibración del equipo (vigente).
+    \item \textbf{Operador:} Nombre del técnico responsable que ejecutó la prueba.
+\end{itemize}
+
+\subsection*{Reporte Sumario}
+
+Adicionalmente, se entregará un listado resumen que condense en una tabla los 310 IDs de los puntos, la longitud de cada uno y el estado final (``PASA''), sirviendo como inventario rápido de la infraestructura entregada.
+
 \section{Protocolos de aceptación}
-Procedimientos de prueba de cables con certificador.
-Reportes esperados (NEXT, PSNEXT, pérdida de retorno).
-Protocolos de aceptación de la red.
+
+La recepción final de la infraestructura de cableado estructurado y la conformidad del servicio estarán sujetas al cumplimiento estricto del siguiente protocolo de validación, el cual garantiza que la inversión realizada cumple con los estándares para soportar tráfico de 10 Gbps.
+
+\subsection*{Criterios Técnicos de Aceptación (Validación Instrumental)}
+
+La red será aceptada únicamente si el 100\% de los puntos instalados (310 nodos) cuentan con un certificado de prueba con resultado ``PASA'' (PASS) bajo el estándar TIA-568.2-D Categoría 6A.
+
+Para la aceptación técnica, se revisarán detalladamente los márgenes de desempeño en los siguientes parámetros críticos reportados por el equipo certificador:
+
+\begin{enumerate}
+    \item \textbf{NEXT (Near-End Crosstalk):} Se verificará que la diafonía (interferencia) en el extremo cercano se mantenga por encima de la línea límite del estándar a lo largo de todo el barrido de frecuencia (1-500 MHz). Valores marginales o fallas indicarán una mala terminación en el Jack o Patch Panel.
+    \item \textbf{PSNEXT (Power Sum NEXT):} Dado que la red operará con transmisiones simultáneas en los 4 pares (necesario para 10 Gigabit Ethernet), la aceptación depende de que la suma de potencias de diafonía no exceda los límites permitidos.
+    \item \textbf{Pérdida de Retorno (Return Loss):} Este parámetro es condición sine qua non para la aceptación. Se rechazará cualquier enlace donde la pérdida de retorno sea inferior al estándar, ya que esto provocaría retransmisiones de paquetes y lentitud en la red, a pesar de tener ``buen cable''.
+    \item \textbf{Mapa de Cableado y Continuidad:} No se aceptará ningún punto con errores de polaridad, pares invertidos o blindaje discontinuo.
+\end{enumerate}
+
+\subsection*{Procedimiento de Verificación en Campo (Muestreo)}
+
+Como parte del acto de recepción de obra, el Supervisor designado por la Facultad podrá solicitar una verificación aleatoria in situ:
+
+\begin{enumerate}
+    \item \textbf{Muestra:} Se seleccionará al azar una muestra representativa (ej. 10\% de los puntos, aprox. 30 nodos) distribuidos entre los niveles críticos (especialmente Nivel 3 - Laboratorios).
+    \item \textbf{Contra-prueba:} El contratista deberá repetir la prueba de certificación en presencia del Supervisor utilizando el mismo equipo calibrado.
+    \item \textbf{Criterio de Rechazo del Lote:} Si durante el muestreo se detecta más de un 5\% de fallas o discrepancias respecto al informe entregado, se rechazará el lote completo y se exigirá una nueva certificación del 100\% de la red a costo del contratista.
+\end{enumerate}
+
+\subsection*{Requisitos Documentarios para el Cierre}
+
+La firma del Acta de Recepción Definitiva procederá una vez entregados y aprobados los siguientes documentos:
+
+\begin{itemize}
+    \item \textbf{Dossier de Certificación:} Archivo digital nativo y PDF con los 310 reportes individuales ``PASA''.
+    \item \textbf{Planos As-Built (Como construido):} Planos actualizados en AutoCAD/PDF reflejando la ubicación exacta final de cada punto y la ruta real de las canalizaciones, con su codificación correspondiente (según TIA-606-C).
+    \item \textbf{Certificado de Garantía:} Documento emitido por el instalador garantizando la mano de obra y los componentes pasivos por un periodo determinado (ej. 12 o 24 meses).
+\end{itemize}
