@@ -9,6 +9,7 @@
 \usepackage[spanish,es-noshorthands]{babel}
 \usepackage{geometry}
 \usepackage{hyperref}
+\hypersetup{unicode=true,pdftitle={Expediente Técnico - Sistema de Cableado Estructurado UNSAAC},pdfauthor={Escuela Profesional de Ingeniería Informática y de Sistemas}}
 \usepackage{setspace}
 \usepackage{parskip}
 \usepackage{graphicx}
@@ -19,6 +20,10 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{ragged2e}
+\usepackage[table,dvipsnames]{xcolor}  % para \cellcolor en el Gantt
+\usepackage{colortbl}                  % para color en celdas de tabla
+\usepackage{multirow}                  % para celdas multi-fila
+\usepackage{amsmath}                   % para \text{} dentro de entornos matemáticos
 
 
 \geometry{
@@ -30,6 +35,27 @@
 
 \titleformat{\chapter}[hang]{\normalfont\bfseries\Large}{\thechapter.}{1em}{}
 
+% ---------------------------------------------------------------
+% Parámetros Globales del Proyecto
+% ---------------------------------------------------------------
+\newcommand{\totalPuntos}{587}
+\newcommand{\totalPuntosDatos}{557}
+\newcommand{\totalAP}{16}
+\newcommand{\totalCamaras}{14}
+\newcommand{\totalPisos}{4}
+\newcommand{\totalSwitchesCuarentaYOcho}{7}
+\newcommand{\totalSwitchesVeinticuatro}{1}
+\newcommand{\totalRacksVeinticuatro}{3}   % 1er, 3er, y 4to piso (24U)
+\newcommand{\totalRacksCuarentaDos}{1}    % 2do piso (42U)
+\newcommand{\totalUPS}{4}                 % Uno por rack
+\newcommand{\totalPDU}{4}                 % Uno por rack
+\newcommand{\cajaCableCatSeisA}{107}      % Cajas de 305m F/UTP Cat 6A estimadas con el metrado de la cotización consolidada
+\newcommand{\metrosEscalerilla}{180}      % Metros de escalerilla portacables
+\newcommand{\metrosCanaleta}{240}         % Metros de canaleta PVC
+\newcommand{\metrosTuboConduit}{80}       % Metros de tubería conduit EMT
+\newcommand{\cajasRegistro}{25}           % Cantidad de cajas de registro
+\newcommand{\sellosCortafuego}{6}        % Cantidad de sellos cortafuego
+\newcommand{\cableTierraVerde}{50}        % Metros de conductor de cobre aislado verde
 
 % ---------------------------------------------------------------
 \begin{document}

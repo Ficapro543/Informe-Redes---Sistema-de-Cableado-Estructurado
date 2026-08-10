@@ -2,14 +2,26 @@
 
 \section{Tipo y categoría de cables}
 
-Para garantizar el rendimiento requerido en los niveles segundo, tercero y cuarto del pabellón de la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC, especialmente en zonas de alta demanda como los laboratorios del tercer piso, el laboratorio de investigación del cuarto piso y los laboratorios del segundo piso, se especifica el siguiente esquema de cableado:
+Para garantizar el rendimiento requerido en los \totalPisos{} niveles del pabellón de la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC, se especifica el siguiente esquema de cableado:
 
 \begin{itemize}
     \item \textbf{Cableado Horizontal (Datos, Telefonía IP y CCTV):} Se utilizará cable de par trenzado de cuatro pares del tipo \textbf{F/UTP (Foiled/Unshielded Twisted Pair) Categoría 6A} LSZH (Low Smoke Zero Halogen), marca \textbf{Panduit} modelo \texttt{PUFL6X04WH}. El blindaje general foil protege contra la diafonía exógena (Alien Crosstalk) y las interferencias electromagnéticas (EMI) típicas de los entornos de laboratorios informáticos y equipos eléctricos del edificio. Soporta velocidades de hasta 10 Gbps a frecuencias de 500 MHz, cumpliendo con el estándar IEEE 802.3an (10GBASE-T).
-    \item \textbf{Cableado Vertical o Backbone:} Interconexión del Distribuidor Principal de Cableado (MDF) situado en el segundo piso con los Distribuidores de Piso (IDF) del tercer y cuarto piso mediante \textbf{Fibra Óptica Multimodo OM4} de 4 hilos, con chaqueta LSZH, marca \textbf{CommScope} serie \texttt{TeraSPEED}, optimizada para transmisión láser de 10/40/100 Gbps. Se instalarán dos enlaces independientes: MDF (2do piso) a IDF (3er piso) y MDF (2do piso) a IDF (4to piso), con una longitud estimada de 40 metros cada uno.
+    \item \textbf{Cableado Vertical o Backbone:} Interconexión del Distribuidor Principal de Cableado (MDF) situado en el segundo piso con los Distribuidores de Piso (IDF) del primer, tercer y cuarto piso mediante \textbf{Fibra Óptica Multimodo OM4} de 4 hilos, con chaqueta LSZH, marca \textbf{CommScope} serie \texttt{TeraSPEED}, optimizada para transmisión láser de 10/40/100 Gbps. Se instalarán tres enlaces independientes: MDF (2do piso) a IDF (1er piso), MDF (2do piso) a IDF (3er piso) y MDF (2do piso) a IDF (4to piso), con longitudes estimadas de 20, 20 y 40 metros respectivamente.
     \item \textbf{Cableado para CCTV (Cámaras IP):} Se utilizará cable \textbf{F/UTP Cat 6A} LSZH (mismo tipo que el cableado horizontal) para las cámaras IP de videovigilancia, alimentadas mediante PoE+ desde los switches de acceso. Los puntos de cámara compartirán el mismo esquema de cableado y certificación que los puntos de datos.
-    \item \textbf{Patch Cords:} Cables de parcheo F/UTP Cat 6A blindados de 2.1 m y 1.0 m, marca \textbf{Panduit} modelo \texttt{CO6X7BU} y \texttt{CO6X3BU}, con conectores blindados RJ-45 moldeados y alivio de tensión integrado. Se suministrarán dos patch cords por cada punto de red instalado.
+    \item \textbf{Patch Cords:} Cables de parcheo F/UTP Cat 6A blindados de 2.1 m y 1.0 m, marca \textbf{Panduit} modelo \texttt{STP6X2MBU} y \texttt{STP6X1MBU}, con conectores blindados RJ-45 moldeados y alivio de tensión integrado. Se suministrarán dos patch cords por cada punto de red instalado (uno para el lado de usuario y otro en el rack).
 \end{itemize}
+
+\subsection*{Definición y clasificación de tomas y puertos de red}
+
+Para efectos de control métrico y técnico de este expediente, se establecen las siguientes definiciones de manera unificada:
+\begin{itemize}
+    \item \textbf{Puerto físico (RJ-45):} Interfaz terminal hembra de 8 hilos blindada que aloja un conector RJ-45.
+    \item \textbf{Punto de red (o enlace horizontal):} El canal completo que va desde el jack RJ-45 en el área de trabajo del usuario, discurre por la canalización horizontal y finaliza en el patch panel modular correspondiente en el rack. Cada punto de red equivale exactamente a un puerto activo en el switch.
+    \item \textbf{Punto simple:} Toma de red compuesta por un único jack RJ-45 montado en un faceplate de 1 o 2 puertos. Se utiliza para dispositivos dedicados de un solo puerto como APs, cámaras de videovigilancia, proyectores o pizarras digitales.
+    \item \textbf{Punto doble:} Toma de red compuesta por dos jacks RJ-45 independientes montados sobre el mismo faceplate de 2 puertos, conectados mediante dos cables F/UTP Cat 6A independientes al patch panel. Se emplea en puestos de trabajo (estaciones de docentes, administrativos y laboratorios) para permitir la conexión paralela de voz (teléfono IP) y datos (PC) sin conmutación local.
+    \item \textbf{Punto de reserva:} Enlace de cableado horizontal completo instalado físicamente pero no conectorizado al switch de forma activa, reservado para expansiones o redundancia operativa.
+\end{itemize}
+
 
 \section{Normas de instalación, etiquetado y terminación}
 
@@ -40,11 +52,12 @@ Dado que el cableado F/UTP Cat 6A opera a frecuencias de hasta 500 MHz, es crít
 La infraestructura de soporte físico se regirá bajo el estándar EIA/ECA-310-E (dimensiones de 19 pulgadas) y ANSI/TIA-569-D (espacios de telecomunicaciones). Se priorizará el uso de gabinetes cerrados (enclosures) sobre racks abiertos para garantizar la seguridad física, la protección contra polvo y humedad, y el control de acceso:
 
 \begin{itemize}
+    \item \textbf{Distribuidor de Piso (IDF - 1er Piso):} Gabinete de piso/pared de \textbf{24U}, ubicado en el cuarto de telecomunicaciones acondicionado bajo la escalera principal del primer piso. Permite alimentar las aulas y oficinas administrativas de dicho nivel sin exceder los límites de longitud horizontal del cableado.
     \item \textbf{Distribuidor Principal (MDF - 2do Piso):} Gabinete de piso autocualificado de \textbf{19 pulgadas} de ancho útil y una altura de \textbf{42U}. Profundidad mínima de 1000 mm para alojar equipos de gran profundidad y gestionar holgadamente el cableado Cat 6A. Cumplirá con el estándar EIA-310-E, con puertas microperforadas (frontal y trasera) para optimizar el flujo de aire, cerradura de seguridad con llave y paneles laterales desmontables. Alojará los servidores locales, switches troncales, patch panels del segundo piso y el panel de fibra óptica principal.
     \item \textbf{Distribuidor de Piso (IDF - 3er Piso):} Gabinete de piso/pared de \textbf{24U}, ubicado estratégicamente en un cuarto de telecomunicaciones dedicado en el tercer piso para no superar el límite de 90 metros de canalización horizontal hacia los laboratorios de cómputo.
     \item \textbf{Distribuidor de Piso (IDF - 4to Piso):} Gabinete de piso/pared de \textbf{24U}, ubicado para alimentar los cubículos de docentes, auditorio, laboratorio de investigación y control de cámaras del cuarto piso.
     \item \textbf{Ordenadores de Cable:} Se instalarán organizadores horizontales de 1U con ducto ranurado frontal y tapa desmontable entre cada patch panel, y organizadores verticales dentro de los gabinetes para asegurar un radio de curvatura correcto en los cables de parcheo y mantener el orden.
-    \item \textbf{Anclaje Antisísmico:} Considerando la ubicación del proyecto en Cusco (zona sísmica), todos los gabinetes se fijarán al piso mediante pernos de expansión tipo Hilti de 3/8" o 1/2". En el caso de gabinetes adosados a pared, se verificará que el muro sea de concreto o ladrillo macizo para soportar el torque de carga.
+    \item \textbf{Anclaje Antisísmico:} Considerando la ubicación del proyecto en Cusco (zona sísmica), todos los gabinetes se fijarán al piso mediante pernos de expansión tipo Hilti de 3/8" o 1/2". En el caso de gabinetes adosados a pared, se verificará que el muro sea de concreto o ladrillo macizo para soportar el torque de carga. En el cuarto piso, al ser muros de drywall, se aplicará un refuerzo estructural con planchas de madera contrachapada y anclaje superior de seguridad a la losa de techo.
 \end{itemize}
 
 \subsection*{Criterios de diseño de salas de telecomunicaciones}
@@ -59,31 +72,27 @@ Cada cuarto de telecomunicaciones (MDF e IDF) deberá cumplir con los siguientes
     \item \textbf{Tomas Eléctricas Dedicadas:} Cada cuarto de telecomunicaciones contará con circuitos eléctricos independientes de 20A o 30A con tierra aislada, dedicados exclusivamente a los equipos de red, minimizando el riesgo de sobrecargas por conexión de equipos no autorizados.
 \end{itemize}
 
-\section{Equipos pasivos y activos}
-
-La infraestructura se compondrá de hardware certificado de grado empresarial con componentes de las marcas líderes del mercado:
-
 \subsection*{Equipos Pasivos}
 
 \begin{itemize}
-    \item \textbf{Patch Panels:} Módulos modulares descargados de 24 puertos Cat 6A angulares, marca \textbf{CommScope} modelo \texttt{760237040}, para optimizar el espacio y evitar el estrés mecánico en los patch cords. Se instalarán 5 paneles en el MDF (2do piso), 4 en el IDF (3er piso) y 4 en el IDF (4to piso).
+    \item \textbf{Patch Panels:} Módulos modulares descargados de 24 puertos Cat 6A angulares, marca \textbf{CommScope} modelo \texttt{760237040}, para optimizar el espacio y evitar el estrés mecánico en los patch cords. Se instalarán un total de 15 paneles distribuidos para atender de forma ordenada la densidad de puntos: 2 paneles en el IDF del 1er piso, 3 en el MDF (2do piso), 6 en el IDF del 3er piso y 4 en el IDF del 4to piso (dando un total de 360 puertos disponibles para los \totalPuntos{} puntos activos).
     \item \textbf{Jacks y Conectores:} Módulos RJ-45 Mini-Com Cat 6A blindados, marca \textbf{Panduit} modelo \texttt{CJS6X88TGY}, con tecnología de terminación por desplazamiento de aislante (IDC) y contacto de 50 micras de oro.
     \item \textbf{Faceplates y Cajas de Montaje:} Placas faceplate de 2 puertos color blanco, marca \textbf{Panduit} modelo \texttt{CFPL2EIWH}, con etiquetado iconográfico integrado para datos (azul), voz (verde) y CCTV (rojo). Se instalarán sobre cajas superficiales de PVC de 1 módulo en paredes y canaletas.
-    \item \textbf{Patch Cords:} Cables de parcheo F/UTP Cat 6A blindados, marca \textbf{Panduit} modelo \texttt{CO6X7BU} (2.1 m) y \texttt{CO6X3BU} (1.0 m), con conectores blindados RJ-45 moldeados y alivio de tensión. Se suministrarán dos unidades por cada punto de red (uno para el lado del usuario y otro para el lado del patch panel).
+    \item \textbf{Patch Cords:} Cables de parcheo F/UTP Cat 6A blindados, marca \textbf{Panduit} modelo \texttt{STP6X2MBU} (2.1 m) y \texttt{STP6X1MBU} (1.0 m), con conectores blindados RJ-45 moldeados y alivio de tensión. Se suministrarán dos unidades por cada punto de red (uno para el lado del usuario y otro para el lado del patch panel) totalizando \totalPuntos{} unidades de cada longitud.
     \item \textbf{Organizadores de Cable:} Organizadores horizontales de 1U con ducto ranurado frontal y tapa desmontable, marca \textbf{Tripp Lite} modelo \texttt{NR2600}, instalados entre cada patch panel. Organizadores verticales dentro de cada gabinete para el guiado de cables de parcheo.
-    \item \textbf{Canalizaciones:} Escalerillas portacables de tipo malla electrozincada en pasadizos principales (180 metros estimados), canaletas de PVC de doble vía con división física para datos y energía en oficinas y laboratorios (240 metros), y tubería corrugada de 1 pulgada para la protección del backbone de fibra óptica entre pisos.
-    \item \textbf{Sistema de Puesta a Tierra:} Barra de Puesta a Tierra Principal de Telecomunicaciones (TMGB) en el MDF del segundo piso, marca \textbf{Panduit} modelo \texttt{TMGB-060}, conectada directamente al pozo a tierra del edificio mediante conductor de cobre aislado verde de calibre 2 AWG. Barras secundarias (TGB) marca \textbf{Panduit} modelo \texttt{TGB-040} en los IDF del tercer y cuarto piso, interconectadas a la TMGB mediante conductores de cobre aislado verde 6 AWG.
+    \item \textbf{Canalizaciones:} Escalerillas portacables de tipo malla electrozincada en pasadizos principales (\metrosEscalerilla{} metros estimados), canaletas de PVC de doble vía con división física para datos y energía en oficinas y laboratorios (\metrosCanaleta{} metros), y tubería corrugada de 1 pulgada para la protección del backbone de fibra óptica entre pisos (\metrosTuboConduit{} metros).
+    \item \textbf{Sistema de Puesta a Tierra:} Barra de Puesta a Tierra Principal de Telecomunicaciones (TMGB) en el MDF del segundo piso, marca \textbf{Panduit} modelo \texttt{TMGB-060}, conectada directamente al pozo a tierra general del edificio mediante conductor de cobre desnudo calibre \textbf{2 AWG} (35 mm$^2$) en el menor recorrido posible y sin empalmes. Barras secundarias (TGB) marca \textbf{Panduit} modelo \texttt{TGB-040} en los IDF del primer, tercer y cuarto piso, interconectadas a la TMGB mediante conductores de cobre aislado verde 6 AWG.
 \end{itemize}
 
 \subsection*{Equipos Activos}
 
 \begin{itemize}
-    \item \textbf{Switches de Acceso:} Switches gestionables de Capa 2/3 con soporte \textbf{PoE+ (Power over Ethernet - IEEE 802.3at)} marca \textbf{Cisco} serie \textbf{Catalyst 9200}, modelos \texttt{C9200-48P-E} (48 puertos) y \texttt{C9200-24P-E} (24 puertos), con puertos de bajada a 1 Gbps Base-T y uplinks de 10 Gbps SFP+ para el backbone de fibra óptica.
-    \item \textbf{Transceptores SFP+:} Módulos SFP+ multimodo 10 GBase-SR, marca \textbf{Cisco} modelo \texttt{SFP-10G-SR}, para los enlaces de fibra entre el MDF del segundo piso y los IDF del tercer y cuarto piso (4 unidades).
-    \item \textbf{Puntos de Acceso Inalámbrico (WiFi 6):} Access Points de interior doble banda (2.4 GHz / 5 GHz) con soporte \textbf{WiFi 6 (802.11ax)}, marca \textbf{Cisco} modelo \texttt{C9120AXI}, alimentados mediante PoE+. Se instalarán estratégicamente en pasadizos y ambientes comunes de los tres niveles para brindar cobertura inalámbrica en laboratorios, auditorio, sala multiusos, círculos de estudio, biblioteca y áreas administrativas.
-    \item \textbf{Cámaras IP (CCTV):} Cámaras IP fijas de interior con resolución mínima de 2 MP (1920x1080), PoE+, marca \textbf{Dahua} o \textbf{Hikvision}, conectadas a los switches de acceso PoE+. El \textbf{NVR (Network Video Recorder)} se ubicará en el gabinete MDF del segundo piso para la grabación y gestión centralizada de video de las 16 cámaras proyectadas.
-    \item \textbf{UPS:} Sistemas de alimentación ininterrumpida en línea de doble conversión, marca \textbf{Tripp Lite} modelo \texttt{SU3000RTX} (3kVA), un equipo por cada gabinete (MDF + IDF 3er piso + IDF 4to piso = 3 unidades), con autonomía mínima de 15 minutos a plena carga.
-    \item \textbf{PDU:} Unidades de Distribución de Energía rackeables, marca \textbf{Tripp Lite} modelo \texttt{PDU1230}, con entrada monofásica y múltiples salidas NEMA 5-15R/5-20R, una por cada gabinete.
+    \item \textbf{Switches de Acceso:} Switches gestionables de Capa 2/3 con soporte \textbf{PoE+ (Power over Ethernet - IEEE 802.3at)} marca \textbf{Cisco} serie \textbf{Catalyst 9200}, modelos \texttt{C9200-48P-E} (\totalSwitchesCuarentaYOcho{} unidades) y \texttt{C9200-24P-E} (\totalSwitchesVeinticuatro{} unidad), con puertos de bajada a 1 Gbps Base-T y uplinks de 10 Gbps SFP+ para el backbone de fibra óptica. Se distribuirán: 1x C9200-48P-E en el IDF del 1er piso, 1x C9200-48P-E y 1x C9200-24P-E en el MDF (2do piso), 3x C9200-48P-E en el IDF del 3er piso y 2x C9200-48P-E en el IDF del 4to piso.
+    \item \textbf{Transceptores SFP+:} Módulos SFP+ multimodo 10 GBase-SR, marca \textbf{Cisco} modelo \texttt{SFP-10G-SR}, para los enlaces de fibra entre el MDF del segundo piso y los IDF del primer, tercer y cuarto piso (6 unidades en total: 2 transceptores por enlace).
+    \item \textbf{Puntos de Acceso Inalámbrico (WiFi 6):} Access Points de interior doble banda (2.4 GHz / 5 GHz) con soporte \textbf{WiFi 6 (802.11ax)}, marca \textbf{Cisco} modelo \texttt{C9120AXI}, alimentados mediante PoE+. Se instalarán estratégicamente en pasadizos y ambientes comunes de los cuatro niveles (\totalAP{} unidades en total, distribuidos a razón de 4 APs por piso) para brindar cobertura inalámbrica en laboratorios, auditorio, sala de reuniones, círculos de estudio, biblioteca y áreas administrativas.
+    \item \textbf{Cámaras IP (CCTV):} Cámaras IP fijas de interior con resolución mínima de 2 MP (1920x1080), PoE+, marca \textbf{Dahua} o \textbf{Hikvision}, conectadas a los switches de acceso PoE+. Se proyecta un total de \totalCamaras{} cámaras (3 unidades por nivel) integradas con el NVR (Network Video Recorder) de 16 canales que se ubicará en el gabinete MDF del segundo piso para la grabación y gestión centralizada de video.
+    \item \textbf{UPS:} Sistemas de alimentación ininterrumpida en línea de doble conversión, marca \textbf{Tripp Lite} modelo \texttt{SU3000RTX} (3kVA), un equipo por cada gabinete (IDF 1er piso + MDF 2do piso + IDF 3er piso + IDF 4to piso = \totalUPS{} unidades en total), con autonomía mínima de 15 minutos a plena carga para salvaguardar la operatividad de los switches, APs y cámaras.
+    \item \textbf{PDU:} Unidades de Distribución de Energía rackeables, marca \textbf{Tripp Lite} modelo \texttt{PDU1230}, con entrada monofásica y múltiples salidas NEMA 5-15R/5-20R, una por cada gabinete (\totalPDU{} unidades en total).
 \end{itemize}
 
 \section{Canalizaciones, registros y detalles constructivos}
@@ -96,7 +105,7 @@ El sistema de canalizaciones constituye la infraestructura de soporte físico qu
     \item \textbf{Tipo:} Escalerilla portacables de malla electrozincada (tipo rejilla), fabricada en acero al carbono con recubrimiento electrozincado, cumpliendo con la norma ANSI/TIA-569-D y NEMA VE 1.
     \item \textbf{Dimensiones:} Ancho mínimo de 300 mm y profundidad de 50 mm, con separación entre alambres de 50 mm x 100 mm.
     \item \textbf{Soportería:} Instalada cada 1.5 metros sobre soportes tipo L o mensualas metálicas fijadas a losas o paredes mediante pernos de expansión. En tramos horizontales en pasillos principales, se fijará al techo o bajo el falso techo.
-    \item \textbf{Rutas:} Discurrirá por los pasillos principales de distribución de cada nivel (segundo, tercero y cuarto piso), conectando los gabinetes MDF/IDF con las zonas de distribución secundaria.
+    \item \textbf{Rutas:} Discurrirá por los pasillos principales de distribución de cada nivel (primer, segundo, tercero y cuarto piso), conectando los gabinetes MDF/IDF con las zonas de distribución secundaria.
     \item \textbf{Tapas:} En tramos donde la escalerilla cruce zonas accesibles al público, se instalará tapa metálica desmontable para protección mecánica del cableado.
 \end{itemize}
 
@@ -133,8 +142,8 @@ El sistema de canalizaciones constituye la infraestructura de soporte físico qu
 En cumplimiento estricto con las normas \textbf{ANSI/TIA-607-D} y \textbf{ANSI/TIA-607-C}, se implementará un sistema de puesta a tierra dedicado para telecomunicaciones que garantice la protección de los equipos activos y la estabilidad de la transmisión de datos:
 
 \begin{itemize}
-    \item \textbf{Barra Principal (TMGB):} Ubicada en el MDF del segundo piso, marca \textbf{Panduit} modelo \texttt{TMGB-060}, conectada directamente al pozo a tierra general del edificio mediante conductor de cobre desnudo calibre \textbf{2 AWG} (35 mm$^2$) en el menor recorrido posible y sin empalmes. Esta barra servirá como punto de referencia de tierra para todo el sistema de telecomunicaciones de los tres niveles.
-    \item \textbf{Barras Secundarias (TGB):} Una barra en el IDF del tercer piso y otra en el IDF del cuarto piso, marca \textbf{Panduit} modelo \texttt{TGB-040}, interconectadas a la TMGB mediante conductores de cobre aislado color verde de calibre \textbf{6 AWG} (13.3 mm$^2$) por el interior de la canalización del backbone.
+    \item \textbf{Barra Principal (TMGB):} Ubicada en el MDF del segundo piso, marca \textbf{Panduit} modelo \texttt{TMGB-060}, conectada directamente al pozo a tierra general del edificio mediante conductor de cobre desnudo calibre \textbf{2 AWG} (35 mm$^2$) en el menor recorrido posible y sin empalmes. Esta barra servirá como punto de referencia de tierra para todo el sistema de telecomunicaciones de los \totalPisos{} niveles.
+    \item \textbf{Barras Secundarias (TGB):} Barras secundarias (TGB) marca \textbf{Panduit} modelo \texttt{TGB-040} en los IDF del primer, tercer y cuarto piso, interconectadas a la TMGB mediante conductores de cobre aislado color verde de calibre \textbf{6 AWG} (13.3 mm$^2$) por el interior de la canalización del backbone.
     \item \textbf{Vinculación (Bonding):} Todas las estructuras metálicas pasivas se interconectarán a las barras TGB/TMGB:
         \begin{itemize}
             \item Chasis de gabinetes y racks.
@@ -151,8 +160,8 @@ En cumplimiento estricto con las normas \textbf{ANSI/TIA-607-D} y \textbf{ANSI/T
 
 \begin{itemize}
     \item \textbf{Circuitos Dedicados:} Cada cuarto de telecomunicaciones (MDF e IDF) contará con circuitos eléctricos exclusivos de 20A o 30A, con tomas NEMA 5-20R o L5-30R con tierra aislada, independientes de los circuitos de iluminación y tomacorrientes generales.
-    \item \textbf{Sistema UPS:} Los equipos activos de cada gabinete se alimentarán mediante UPS en línea de doble conversión marca \textbf{Tripp Lite} modelo \texttt{SU3000RTX} (3kVA), con autonomía mínima de 15 minutos a plena carga. Se instalará un UPS por cada gabinete.
-    \item \textbf{Respaldo:} Los circuitos de los cuartos de telecomunicaciones deberán estar conectados al sistema de generador de emergencia del edificio (si existiera) para garantizar la continuidad operativa ante cortes prolongados.
+    \item \textbf{Sistema UPS:} Los equipos activos de cada gabinete se alimentarán mediante UPS en línea de doble conversión marca \textbf{Tripp Lite} modelo \texttt{SU3000RTX} (3kVA), con autonomía mínima de 15 minutos a plena carga. Se instalarán \totalUPS{} unidades en total (uno por cada gabinete de comunicaciones).
+    \item \textbf{Generador de Respaldo:} Se propone e implementa un generador diésel de emergencia de \textbf{50 kVA} con interruptor de transferencia automática (ATS) marca Cummins, para alimentar de forma ininterrumpida los circuitos dedicados de los cuatro cuartos de telecomunicaciones y el sistema de climatización del MDF en caso de fallas de la red eléctrica comercial.
 \end{itemize}
 
 \subsection*{Diagrama de Puesta a Tierra}
@@ -161,7 +170,7 @@ Se incluirá en los planos un diagrama unifilar del sistema de puesta a tierra d
 
 \begin{itemize}
     \item Ubicación de la TMGB en el MDF (2do piso) con su conexión al pozo a tierra del edificio.
-    \item Ubicación de las TGB en los IDF (3er y 4to piso).
+    \item Ubicación de las TGB en los IDF (1er, 3er y 4to piso).
     \item Trayectoria y calibre de los conductores de enlace (bonding) entre barras.
     \item Identificación de todos los elementos metálicos a conectar (racks, bandejas, canaletas, patch panels).
     \item Detalle de conexión del blindaje de los cables F/UTP a la barra de tierra del patch panel.
@@ -170,22 +179,22 @@ Se incluirá en los planos un diagrama unifilar del sistema de puesta a tierra d
 
 \section{Procedimientos de certificación}
 
-Una vez finalizado el tendido y terminación del total de \textbf{270 puntos de red} (incluyendo holgura), se procederá a la validación total del sistema:
+Una vez finalizado el tendido y terminación del total de \textbf{\totalPuntos{} puntos de red}, se procederá a la validación técnica total del sistema:
 
 \subsection*{Alcance y Metodología}
 
 \begin{itemize}
-    \item \textbf{Cobertura:} Se someterá a prueba el 100\% de los puntos de red de cobre instalados en los tres niveles del pabellón.
+    \item \textbf{Cobertura:} Se someterá a prueba el 100\% de los puntos de red de cobre instalados en los \totalPisos{} niveles del pabellón.
     \item \textbf{Configuración de Prueba:} Las pruebas se realizarán bajo la configuración de \textbf{Enlace Permanente (Permanent Link)}, evaluando el tramo desde el Patch Panel en el gabinete hasta la toma (Jack RJ-45) en el área de trabajo. No se utilizará la configuración de Canal (Channel) para la certificación de instalación, ya que esta depende de los patch cords del usuario final.
-    \item \textbf{Instrumentación:} Se utilizará un certificador de cableado de campo de Nivel IV (\textbf{Fluke Networks DSX-8000} o equivalente calibrado), con certificado de calibración vigente emitido por el fabricante o laboratorio autorizado con una antigüedad no mayor a 12 meses.
+    \item \textbf{Instrumentación:} Se utilizará un certificador de cableado de campo de Nivel IV o superior (\textbf{Fluke Networks DSX-8000} calibrado), con certificado de calibración vigente emitido por el fabricante o laboratorio autorizado con una antigüedad no mayor a 12 meses.
 \end{itemize}
 
 \subsection*{Parámetros de Evaluación}
 
-El procedimiento de Autotest verificará los siguientes parámetros críticos para la operación a 500 MHz (10GBASE-T):
+El procedimiento de Autotest verificará los siguientes parámetros críticos para la operación a 500 MHz (10GBASE-T) según la norma ANSI/TIA-568.2-D:
 
 \begin{itemize}
-    \item \textbf{Mapa de Cableado (Wire Map):} Verificación de continuidad pin a pin, cortocircuitos, pares abiertos, pares cruzados y pares divididos (split pairs). Confirmación de la correcta terminación T568B y continuidad del blindaje (shield).
+    \item \textbf{Mapa de Cableado (Wire Map):} Verificación de continuidad pin a pin, cortocircuitos, pares abiertos, pares cruzados y pares divididos (split pairs). Confirmación de la correcta terminación T568B y continuidad del blindaje (shield) general del cable F/UTP.
     \item \textbf{Longitud (Length):} Validación de que el enlace permanente no exceda los 90 metros. Cualquier enlace superior será considerado FALLA automática.
     \item \textbf{Pérdida de Inserción (Insertion Loss):} Medición de la atenuación de la señal a lo largo del cable.
     \item \textbf{Pérdida de Retorno (Return Loss):} Medición de la energía reflejada por diferencias de impedancia (curvas excesivas o malas terminaciones). Parámetro crítico para 10 Gbps.
@@ -195,37 +204,14 @@ El procedimiento de Autotest verificará los siguientes parámetros críticos pa
     \item \textbf{Delay Skew:} Diferencia de tiempo de propagación entre pares. No debe exceder los 50 ns para garantizar la integridad de la transmisión 10GBASE-T.
 \end{itemize}
 
-\subsection*{Criterios de Aceptación y Protocolo de Corrección}
+*(Para detalles referentes a la ejecución en obra, muestreo por el supervisor, protocolos de corrección de fallas y formatos del dossier de calidad, consúltese el Capítulo 6 del presente expediente).*
 
+\subsection*{Pruebas de Fibra Óptica (Backbone)}
+
+La certificación de la fibra óptica multimodo OM4 se realizará bajo los parámetros del estándar ANSI/TIA-568.3-D:
 \begin{itemize}
-    \item \textbf{Resultado ``PASA'' (PASS):} Solo se aceptarán enlaces que obtengan este resultado de manera inequívoca, con márgenes (headroom) positivos en todos los parámetros.
-    \item \textbf{Resultado ``PASA Marginal'' (PASS*):} Enlaces cuyo desempeño esté dentro del margen de error del equipo de medición (±1 dB). Serán revisados, re-terminados y vueltos a probar para buscar un PASA sólido, garantizando la longevidad de la instalación.
-    \item \textbf{Resultado ``FALLA'' (FAIL):} Implica la reconstrucción obligatoria del enlace (cambio de cable, re-terminación o reemplazo de conectores) sin costo adicional.
-    \item \textbf{Protocolo de Corrección:}
-        \begin{enumerate}
-            \item \textbf{Diagnóstico:} Utilizar la función de diagnóstico del equipo (HDTDX/HDTDR) para localizar la distancia exacta de la falla (si es en el conector o en el cable).
-            \item \textbf{Acción Correctiva:} Fallas en extremos: re-terminar el conector manteniendo el destrenzado $\le$13 mm. Fallas en cable: reemplazar el cable en su totalidad (no se aceptan empalmes).
-            \item \textbf{Re-certificación:} Una vez corregido, el punto debe ser probado nuevamente y guardado solo cuando obtenga PASA sólido.
-        \end{enumerate}
-\end{itemize}
-
-\subsection*{Procedimiento de Verificación en Campo (Muestreo)}
-
-Como parte del acto de recepción de obra, el Supervisor designado por la Facultad podrá solicitar una verificación aleatoria in situ:
-
-\begin{itemize}
-    \item \textbf{Muestra:} Se seleccionará al azar una muestra representativa del \textbf{10\% de los puntos} (aproximadamente 27 nodos) distribuidos entre los tres niveles, con énfasis en el tercer piso (alta densidad de laboratorios).
-    \item \textbf{Contra-prueba:} El contratista deberá repetir la prueba de certificación en presencia del Supervisor utilizando el mismo equipo calibrado.
-    \item \textbf{Criterio de Rechazo del Lote:} Si durante el muestreo se detecta más de un \textbf{5\% de fallas} o discrepancias respecto al informe entregado, se rechazará el lote completo y se exigirá una nueva certificación del 100\% de la red a costo del contratista.
-\end{itemize}
-
-\subsection*{Entregables de Certificación}
-
-\begin{itemize}
-    \item \textbf{Formato Digital:} Reporte nativo generado por el software de gestión del equipo certificador (formato \texttt{.flw} y PDF), libre de alteraciones, organizado por carpetas correspondientes a cada nivel y gabinete (MDF e IDF).
-    \item \textbf{Reporte Individual por Nodo:} Cada enlace probado incluirá: ID del punto (etiqueta TIA-606-C), resultado Pasa/Falla, gráficas de frecuencia (1-500 MHz) mostrando la línea límite del estándar y la curva medida, mapa de cableado, longitud exacta, headroom (margen en dB), fecha y hora, modelo y número de serie del equipo, y nombre del operador.
-    \item \textbf{Reporte Sumario:} Listado resumen con los 270 IDs de puntos, longitud de cada uno y estado final (PASA), sirviendo como inventario rápido de la infraestructura entregada.
-    \item \textbf{Pruebas de Fibra Óptica:} Certificación de Nivel 1 mediante medición de pérdida de inserción (atenuación) y longitud con equipo LSPM (Fuente de luz y medidor de potencia), evaluando ambas direcciones y longitudes de onda (850 nm y 1300 nm) para cada hilo de fibra OM4.
+    \item \textbf{Certificación de Nivel 1 (Tier 1):} Medición de la pérdida de inserción (atenuación) y la longitud mediante un equipo LSPM (Fuente de Luz y Medidor de Potencia), evaluando ambas direcciones y en las longitudes de onda de 850 nm y 1300 nm para cada uno de los hilos de fibra OM4 de los tres enlaces de backbone.
+    \item \textbf{Límites de Desempeño:} La atenuación total de cada enlace no superará el presupuesto de pérdida calculado (típicamente $\le 2.0\text{ dB}$ para enlaces de fibra óptica cortos de hasta 40 metros, incluyendo acopladores y empalmes).
 \end{itemize}
 
 \section{Criterios de compatibilidad electromagnética}

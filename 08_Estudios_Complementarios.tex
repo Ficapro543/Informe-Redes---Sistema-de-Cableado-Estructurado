@@ -22,7 +22,7 @@ Del relevamiento técnico en los cuatro niveles, se desprenden las siguientes ob
     \item \textbf{Ductería Empotrada (Paredes):}
     \begin{itemize}
         \item \textbf{Estado:} La mayoría de las tuberías empotradas originales (destinadas a telefonía analógica o red Cat 5e antigua) presentan diámetros reducidos (3/4'' o 1/2'').
-        \item \textbf{Compatibilidad Cat 6A:} El cable U/UTP Cat 6A posee un diámetro exterior nominal de 7.2 mm a 8.0 mm. Los ductos existentes de 1/2'' son insuficientes para alojar dos cables de datos (necesarios para puntos dobles) respetando el factor de llenado del 40\%.
+        \item \textbf{Compatibilidad Cat 6A:} El cable F/UTP Cat 6A posee un diámetro exterior nominal de 7.2 mm a 8.0 mm. Los ductos existentes de 1/2'' son insuficientes para alojar dos cables de datos (necesarios para puntos dobles) respetando el factor de llenado del 40\%.
         \item \textbf{Conclusión:} Se descarta la reutilización masiva de la ductería empotrada para los nuevos puntos de red, justificando la partida de canalización secundaria adosada (canaletas externas) considerada en el presupuesto.
     \end{itemize}
     \item \textbf{Rutas Verticales (Montantes):}
@@ -44,7 +44,7 @@ Por lo tanto, el proyecto procederá con la implementación de un sistema indepe
 
 \section{Análisis de interferencias electromagnéticas}
 
-Dada la naturaleza de la transmisión de alta velocidad (10GBASE-T) que opera a frecuencias de hasta 500 MHz, el sistema es susceptible a la degradación por Interferencia Electromagnética (EMI) y Radiofrecuencia (RFI). Este estudio identifica las fuentes de ruido en el Pabellón y establece los protocolos de mitigación necesarios para proteger el cableado U/UTP Categoría 6A.
+Dada la naturaleza de la transmisión de alta velocidad (10GBASE-T) que opera a frecuencias de hasta 500 MHz, el sistema es susceptible a la degradación por Interferencia Electromagnética (EMI) y Radiofrecuencia (RFI). Este estudio identifica las fuentes de ruido en el Pabellón y establece los protocolos de mitigación necesarios para proteger el cableado F/UTP Categoría 6A.
 
 \subsection*{Identificación de Fuentes de Ruido en el Edificio}
 
@@ -57,13 +57,11 @@ Tras la inspección de los planos arquitectónicos y eléctricos de los cuatro n
     \item \textbf{Cableado Eléctrico de Baja Tensión (220V):} Circuitos de tomacorrientes que alimentan las computadoras en los laboratorios de alta densidad.
 \end{enumerate}
 
-\subsection*{Evaluación del Riesgo para Categoría 6A (Alien Crosstalk)}
-
-Además del ruido externo, el principal desafío técnico para el cableado Categoría 6A U/UTP es el Alien Crosstalk (AXT) o Diafonía Exógena.
+Además del ruido externo, el principal desafío técnico para el cableado de alta densidad es el Alien Crosstalk (AXT) o Diafonía Exógena.
 
 \begin{itemize}
     \item \textbf{Definición:} Es la interferencia electromagnética que un cable induce sobre otro cable adyacente dentro del mismo mazo o canaleta.
-    \item \textbf{Riesgo Detectado:} En los tramos principales (salida del gabinete hacia los laboratorios del Nivel 3), se formarán mazos densos de cables. Si estos se agrupan apretadamente sin precaución, el ruido inducido degradará la señal, impidiendo la certificación a 10 Gbps.
+    \item \textbf{Atenuación del Riesgo por F/UTP:} Aunque en los tramos principales (salida del gabinete hacia los laboratorios del Nivel 3) se formarán mazos de alta densidad, la adopción de cable apantallado F/UTP Cat 6A neutraliza en gran parte este efecto. El blindaje general foil de aluminio actúa como una jaula de Faraday, bloqueando las señales exógenas y garantizando la transmisión a 10 Gbps, siempre y cuando se asegure la continuidad de la puesta a tierra en los patch panels.
 \end{itemize}
 
 \subsection*{Estrategia de Mitigación y Cumplimiento Normativo}
@@ -89,7 +87,7 @@ Para neutralizar estos riesgos sin recurrir a costosos cables blindados, el dise
 
 \subsection*{Conclusión del Análisis}
 
-El entorno electromagnético del Pabellón de Ingeniería Informática se clasifica como MICE 1 (Entorno de Oficina/Comercial). Bajo esta clasificación, y aplicando rigurosamente las distancias de separación y técnicas de instalación descritas, el cableado U/UTP Categoría 6A propuesto operará con márgenes de seguridad óptimos, sin requerir apantallamiento adicional.
+El entorno electromagnético del Pabellón de Ingeniería Informática se clasifica como MICE 1 (Entorno de Oficina/Comercial). Bajo esta clasificación, y aplicando rigurosamente las distancias de separación y las técnicas de puesta a tierra del blindaje, el cableado F/UTP Categoría 6A propuesto operará con márgenes de seguridad y desempeño óptimos.
 
 \section{Evaluación de infraestructura para racks y UPS}
 
@@ -115,7 +113,7 @@ Considerando la ubicación del proyecto en Cusco (Zona Sísmica), se establecen 
 
 \begin{enumerate}
     \item \textbf{Capacidad Portante del Piso:} Se estima que un gabinete completamente equipado (Switches + UPS + Baterías) puede alcanzar un peso dinámico de 150 kg a 250 kg. Se ha verificado visualmente que las losas de concreto de los ambientes técnicos (especialmente en el Nivel 2 y 3) no presentan grietas estructurales y son aptas para soportar esta carga puntual.
-    \item \textbf{Anclaje Antisísmico:} La infraestructura existente permite la fijación de los gabinetes al piso mediante pernos de expansión (tipo Hilti o similar) de 3/8'' o 1/2''. En el caso de racks adosados a pared (si los hubiera en Nivel 4), se requerirá verificar que el muro sea de concreto o ladrillo macizo (no Drywall) para soportar el torque de carga.
+    \item \textbf{Anclaje Antisísmico en Muros Convencionales y Drywall:} La infraestructura existente permite la fijación de los gabinetes de piso (MDF e IDF) al piso mediante pernos de expansión (tipo Hilti o similar) de 3/8'' o 1/2''. En el caso del cuarto nivel (Nivel 4), debido a que los tabiques son de drywall, se establece que el rack de 24U se instalará fijándolo directamente a los parantes de acero galvanizado (studs) mediante tornillos autoperforantes de alta resistencia, interponiendo una plancha de madera contrachapada (plywood) de 3/4" como respaldo estructural para distribuir las fuerzas de torque. Adicionalmente, se anclará el rack de forma aérea a la losa de concreto del techo mediante espárragos roscados de 3/8" para prevenir cualquier cabeceo o deformación sísmica.
 \end{enumerate}
 
 \subsection*{Previsión para Sistemas de Energía (UPS)}

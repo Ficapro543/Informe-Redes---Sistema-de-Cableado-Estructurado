@@ -2,51 +2,83 @@
 
 \section{Cronograma de ejecución de actividades}
 
-El plan de trabajo se ha diseñado para optimizar los tiempos de intervención en los laboratorios y aulas, priorizando los ambientes críticos del Tercer Nivel (Alta Densidad).
+El plan de trabajo del proyecto ha sido diseñado para completarse en un plazo estricto de \textbf{3 semanas (21 días calendario)}, con fecha programada de inicio para el \textbf{17 de agosto de 2026}. 
+
+La estrategia de despliegue sigue una prioridad de ataque secuencial basada en la densidad de puntos y la criticidad de los ambientes:
+\begin{enumerate}
+    \item \textbf{Prioridad 1: Tercer Piso (Nivel 3 - 135 puntos).} Contiene los laboratorios de cómputo principales. Se interviene en primer lugar para minimizar la afectación al dictado de clases.
+    \item \textbf{Prioridad 2: Segundo Piso (Nivel 2 - 55 puntos).} Incluye aulas académicas adicionales y la biblioteca.
+    \item \textbf{Prioridad 3: Primer Piso (Nivel 1 - 40 puntos).} Corresponde a las aulas comunes y la zona administrativa inferior.
+    \item \textbf{Prioridad 4: Cuarto Piso (Nivel 4 - 80 puntos).} Comprende cubículos de docentes e investigación. Se ejecuta al final por contar con menor concurrencia crítica y mayor flexibilidad.
+\end{enumerate}
+
+A continuación se presenta el desglose de actividades y duraciones del proyecto:
 
 \begin{table}[H]
 \centering
-\caption{Cronograma de actividades para el proyecto de cableado estructurado}
-\begin{tabular}{|c|l|c|p{6.5cm}|}
+\caption{Cronograma de Actividades (21 Días Calendario)}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|l|c|p{7.5cm}|}
 \hline
-\textbf{Fase} & \textbf{Actividad Principal} & \textbf{Duración Est.} & \textbf{Descripción Técnica} \\ \hline
-I & Obras Preliminares y Replanteo & 3 Días & Trazo de rutas en los 4 niveles, marcado de ubicación de puntos en pared/piso y movilización de materiales a almacén en obra. \\ \hline
-II & Instalación de Canalizaciones & 10 Días & Montaje de canaletas, tuberías PVC y cajas de paso desde los montantes hasta el área de usuario. Se iniciará por el Nivel 3 (Laboratorios). \\ \hline
-III & Tendido de Cableado Horizontal & 8 Días & Instalación de bobinas Cat 6A U/UTP. Se realiza el peinado de mazos y etiquetado provisional en extremos. \\ \hline
-IV & Conectorización y Terminación & 7 Días & Terminación de Jacks RJ45 en lado usuario y remate en Patch Panels (Gabinetes IDF/MDF). \\ \hline
-V & Certificación y Etiquetado Final & 4 Días & Pruebas con equipo certificador (Fluke), colocación de etiquetas definitivas bajo norma TIA-606-C y limpieza de obra. \\ \hline
-VI & Entrega de Dossier (Cierre) & 3 Días & Elaboración de planos As-Built y entrega de informe de certificación. \\ \hline
-\end{tabular}
+\textbf{Fase} & \textbf{Actividad Principal} & \textbf{Duración Est.} & \textbf{Descripción Técnica / Estrategia} \\ \hline
+I & Obras Preliminares y Replanteo & 3 Días & Replanteo físico de rutas en los \totalPisos{} niveles, habilitación de almacén y marcado de tomas. \\ \hline
+II & Instalación de Canalizaciones & 8 Días & Montaje de escalerillas en pasillos, canaletas y conduit en aulas, siguiendo la secuencia: Piso 3 $\to$ Piso 2 $\to$ Piso 1 $\to$ Piso 4. \\ \hline
+III & Tendido de Cableado Horizontal & 8 Días & Tendido de cables F/UTP Cat 6A, peinado de mazos en gabinetes y etiquetado provisional. \\ \hline
+IV & Conectorización y Terminación & 6 Días & Terminación de jacks RJ-45 en las tomas de usuario y en los 15 patch panels de los gabinetes. \\ \hline
+V & Certificación y Pruebas Físicas & 5 Días & Certificación de los 310 puntos de cobre con Fluke DSX-8000 y los 3 enlaces de fibra con LSPM. \\ \hline
+VI & Cierre, Planos y Dossier Técnico & 3 Días & Elaboración de planos As-Built, recopilación del dossier de calidad y acta de conformidad. \\ \hline
+\end{tabular}}%
 \end{table}
-
-Nota: Algunas actividades como la Canalización (II) y el Tendido de Cable (III) se realizarán con un traslape (superposición) de tiempos para agilizar el avance.
 
 \section{Cronograma de compras y desembolsos}
 
-Este cronograma financiero asegura la disponibilidad de los insumos críticos (especialmente el cobre, que es sensible a variaciones de precio) antes del inicio de las labores fuertes.
+Este plan financiero garantiza la liquidez para la compra anticipada de materiales y el cumplimiento del cronograma físico de 21 días:
 
 \begin{table}[H]
 \centering
-\caption{Plan de desembolsos y cronograma de pagos del proyecto}
+\caption{Cronograma de Desembolsos del Proyecto}
 \begin{tabular}{|l|c|c|p{6.5cm}|}
 \hline
 \textbf{Hito del Proyecto} & \textbf{Momento} & \textbf{\% Desembolso} & \textbf{Concepto / Justificación} \\ \hline
-Adelanto Inicial & Día 0 & 60\% & \textbf{Compra de Materiales Importados:} Adquisición del 100\% de bobinas Cat 6A, Jacks, Patch Panels y Canaletas para asegurar stock y congelar precios (mitigación de riesgo inflacionario). \\ \hline
-Valorización & Día 15 & 25\% & \textbf{Avance de Obra:} Pago de planillas de personal (Mano de Obra) e insumos menores consumidos durante la canalización y tendido. \\ \hline
-Liquidación & Día 30 & 15\% & \textbf{Cierre y Conformidad:} Pago final contra entrega de Protocolos de Certificación, Planos As-Built y operatividad al 100\%. \\ \hline
+Adelanto Inicial & Día 0 & 60\% & Adquisición del 100\% de bobinas F/UTP Cat 6A, patch panels, racks, gabinetes y canaletas para mitigar riesgo de stock. \\ \hline
+Valorización de Obra & Día 11 & 25\% & Pago por avance de obra física (canalización y tendido al 100\%) y personal. \\ \hline
+Liquidación Final & Día 21 & 15\% & Contra entrega de planos As-Built, dossier de certificación Fluke y acta de recepción de obra. \\ \hline
 \end{tabular}
 \end{table}
 
+\clearpage
+
 \section{Diagrama de Gantt de instalación}
 
-A continuación se presenta la distribución temporal de las tareas durante las 4 semanas de ejecución proyectada.
+A continuación se presenta el Diagrama de Gantt detallado para los 21 días calendario de ejecución (del 17 de agosto al 6 de septiembre de 2026), ilustrando el traslape estratégico de tareas:
 
-\subsection*{Estrategia de intervención por niveles}
-
-Para cumplir con este Gantt, se propone el siguiente orden de ataque:
-
-\begin{enumerate}
-    \item \textbf{Prioridad 1 (Semana 1-2): Nivel 3.} Al tener la mayor densidad (135 puntos) y ser laboratorios de cómputo, es la ruta crítica. Se debe liberar primero para no entorpecer clases.
-    \item \textbf{Prioridad 2 (Semana 2-3): Nivel 2.} Nivel administrativo y biblioteca.
-    \item \textbf{Prioridad 3 (Semana 3): Nivel 1 y Nivel 4.} Se ejecutan en paralelo al cierre del nivel 2, ya que tienen menor densidad.
-\end{enumerate}
+\begin{table}[H]
+\centering
+\caption{Diagrama de Gantt - Ejecución del Proyecto (Septiembre 2026)}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|*{21}{c|}}
+\hline
+\textbf{Actividad / Día} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20} & \textbf{21} \\ \hline
+\textbf{Phase I: Preliminares} & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & & & & & & & & & & & \\ \hline
+\textbf{Phase II: Canalizaciones} & & & & & & & & & & & & & & & & & & & & & \\ \hline
+-- Canalización Piso 3 & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & & & & & & & & & \\ \hline
+-- Canalización Piso 2 & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & & & & & & & \\ \hline
+-- Canalización Piso 1 & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & & & & & \\ \hline
+-- Canalización Piso 4 & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & & & \\ \hline
+\textbf{Phase III: Tendidos} & & & & & & & & & & & & & & & & & & & & & \\ \hline
+-- Tendido Piso 3 & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & & & & & \\ \hline
+-- Tendido Piso 2 & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & & & \\ \hline
+-- Tendido Piso 1 & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & & \\ \hline
+-- Tendido Piso 4 & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & \\ \hline
+\textbf{Phase IV: Terminación} & & & & & & & & & & & & & & & & & & & & & \\ \hline
+-- Terminación Piso 3 & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & & \\ \hline
+-- Terminación Piso 2 & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & & \\ \hline
+-- Terminación Piso 1 & & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & & \\ \hline
+-- Terminación Piso 4 & & & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & \\ \hline
+\textbf{Phase V: Certificación} & & & & & & & & & & & & & & & & & & & & & \\ \hline
+-- Certificación Piso 3 & & & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & & \\ \hline
+-- Certificación Piso 2 & & & & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & & \\ \hline
+-- Certificación Pisos 1 y 4 & & & & & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X & & \\ \hline
+\textbf{Phase VI: Cierre y Dossier} & & & & & & & & & & & & & & & & & & & \cellcolor{blue!30}X & \cellcolor{blue!30}X & \cellcolor{blue!30}X \\ \hline
+\end{tabular}}%
+\end{table}

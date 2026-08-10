@@ -24,14 +24,14 @@ Se utilizará un analizador de cableado de Nivel IV (ej. Fluke Networks DSX-8000
     \begin{itemize}
         \item \textbf{Justificación:} Se excluyen los patch cords de prueba para medir únicamente la infraestructura fija instalada (del Patch Panel al Jack de usuario), que es la responsabilidad del instalador.
     \end{itemize}
-    \item \textbf{Tipo de Cable:} U/UTP Cat 6A LSZH.
+    \item \textbf{Tipo de Cable:} F/UTP Cat 6A LSZH (con blindaje general foil).
     \item \textbf{NVP (Nominal Velocity of Propagation):} Se ajustará el valor NVP según la ficha técnica del fabricante del cable suministrado (típicamente entre 65\% y 72\%) para asegurar una medición precisa de la longitud.
     \item \textbf{Estándar Límite:} TIA Cat 6A Perm. Link (+PoE), para validar no solo datos sino también la capacidad de soportar alimentación eléctrica (PoE) sin sobrecalentamiento.
 \end{itemize}
 
 \subsection*{Fase 3: Ejecución de Pruebas de Desempeño (Autotest)}
 
-Se ejecutará la secuencia de Autotest en el 100\% de los nodos (aprox. 310 puntos), evaluando los siguientes parámetros críticos para la operación a 500 MHz:
+Se ejecutará la secuencia de Autotest en el 100\% de los \textbf{\totalPuntos{} puntos de red} distribuidos en los \totalPisos{} niveles, evaluando los siguientes parámetros críticos para la operación a 500 MHz:
 
 \begin{enumerate}
     \item \textbf{Mapa de Cableado (Wire Map):} Verifica continuidad pin a pin, cortocircuitos, pares abiertos, pares cruzados y pares divididos (split pairs).
@@ -99,7 +99,7 @@ El equipo de certificación (Scanner) deberá contar con:
 
 \section{Reportes de certificación esperados}
 
-La aceptación final del proyecto estará condicionada a la entrega de un Dossier de Calidad que documente el desempeño de cada uno de los 310 puntos de red instalados. Los reportes deberán cumplir con las siguientes características formales:
+La aceptación final del proyecto estará condicionada a la entrega de un Dossier de Calidad que documente el desempeño de cada uno de los \textbf{\totalPuntos{}} puntos de red instalados en los \totalPisos{} niveles del pabellón. Los reportes deberán cumplir con las siguientes características formales:
 
 \subsection*{Formato de Entrega (Inalterabilidad)}
 
@@ -134,7 +134,7 @@ Cada hoja de reporte debe incluir automáticamente los metadatos de la prueba pa
 
 \subsection*{Reporte Sumario}
 
-Adicionalmente, se entregará un listado resumen que condense en una tabla los 310 IDs de los puntos, la longitud de cada uno y el estado final (``PASA''), sirviendo como inventario rápido de la infraestructura entregada.
+Adicionalmente, se entregará un listado resumen que condense en una tabla los \textbf{\totalPuntos{}} IDs de los puntos, la longitud de cada uno y el estado final (``PASA''), sirviendo como inventario rápido de la infraestructura entregada.
 
 \section{Protocolos de aceptación}
 
@@ -142,7 +142,7 @@ La recepción final de la infraestructura de cableado estructurado y la conformi
 
 \subsection*{Criterios Técnicos de Aceptación (Validación Instrumental)}
 
-La red será aceptada únicamente si el 100\% de los puntos instalados (310 nodos) cuentan con un certificado de prueba con resultado ``PASA'' (PASS) bajo el estándar TIA-568.2-D Categoría 6A.
+La red será aceptada únicamente si el 100\% de los puntos instalados (\textbf{\totalPuntos{} nodos}) cuentan con un certificado de prueba con resultado ``PASA'' (PASS) bajo el estándar TIA-568.2-D Categoría 6A.
 
 Para la aceptación técnica, se revisarán detalladamente los márgenes de desempeño en los siguientes parámetros críticos reportados por el equipo certificador:
 
@@ -158,7 +158,7 @@ Para la aceptación técnica, se revisarán detalladamente los márgenes de dese
 Como parte del acto de recepción de obra, el Supervisor designado por la Facultad podrá solicitar una verificación aleatoria in situ:
 
 \begin{enumerate}
-    \item \textbf{Muestra:} Se seleccionará al azar una muestra representativa (ej. 10\% de los puntos, aprox. 30 nodos) distribuidos entre los niveles críticos (especialmente Nivel 3 - Laboratorios).
+    \item \textbf{Muestra:} Se seleccionará al azar una muestra representativa (10\% de los puntos, aprox. 31 nodos) distribuidos entre los \totalPisos{} niveles, con énfasis en el Nivel 3 (mayor densidad de laboratorios).
     \item \textbf{Contra-prueba:} El contratista deberá repetir la prueba de certificación en presencia del Supervisor utilizando el mismo equipo calibrado.
     \item \textbf{Criterio de Rechazo del Lote:} Si durante el muestreo se detecta más de un 5\% de fallas o discrepancias respecto al informe entregado, se rechazará el lote completo y se exigirá una nueva certificación del 100\% de la red a costo del contratista.
 \end{enumerate}
@@ -168,7 +168,7 @@ Como parte del acto de recepción de obra, el Supervisor designado por la Facult
 La firma del Acta de Recepción Definitiva procederá una vez entregados y aprobados los siguientes documentos:
 
 \begin{itemize}
-    \item \textbf{Dossier de Certificación:} Archivo digital nativo y PDF con los 310 reportes individuales ``PASA''.
+    \item \textbf{Dossier de Certificación:} Archivo digital nativo y PDF con los \totalPuntos{} reportes individuales ``PASA'' de cobre F/UTP Cat 6A, más los 3 reportes de fibra óptica OM4 del backbone.
     \item \textbf{Planos As-Built (Como construido):} Planos actualizados en AutoCAD/PDF reflejando la ubicación exacta final de cada punto y la ruta real de las canalizaciones, con su codificación correspondiente (según TIA-606-C).
     \item \textbf{Certificado de Garantía:} Documento emitido por el instalador garantizando la mano de obra y los componentes pasivos por un periodo determinado (ej. 12 o 24 meses).
 \end{itemize}
