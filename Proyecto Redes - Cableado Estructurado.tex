@@ -15,15 +15,18 @@
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{pdfpages}
+\usepackage[table,dvipsnames]{xcolor}  % para \cellcolor en el Gantt
 \usepackage{float}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{ragged2e}
-\usepackage[table,dvipsnames]{xcolor}  % para \cellcolor en el Gantt
-\usepackage{colortbl}                  % para color en celdas de tabla
 \usepackage{multirow}                  % para celdas multi-fila
 \usepackage{amsmath}                   % para \text{} dentro de entornos matemáticos
+
+\makeatletter
+\providecommand{\insert@pcolumn}{\insert@column}
+\makeatother
 
 
 \geometry{
