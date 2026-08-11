@@ -91,7 +91,7 @@ El entorno electromagnético del Pabellón de Ingeniería Informática se clasif
 
 \section{Evaluación de infraestructura para racks y UPS}
 
-Para asegurar la operatividad y mantenibilidad de los Centros de Cableado (IDF/MDF) proyectados en los cuatro niveles, se ha realizado una evaluación de las condiciones físicas y ambientales de los espacios designados, verificando su conformidad con los estándares ANSI/TIA-569-D (Espacios de Telecomunicaciones) y las cargas eléctricas estimadas.
+Para asegurar la operatividad y mantenibilidad de los tres Centros de Cableado principales (MDF, IDF-03 e IDF-04), se ha realizado una evaluación de las condiciones físicas y ambientales de los espacios designados, verificando su conformidad con los estándares ANSI/TIA-569-D (Espacios de Telecomunicaciones) y las cargas eléctricas estimadas.
 
 \subsection*{Análisis de Espacios y Dimensionamiento (Footprint)}
 
@@ -123,8 +123,8 @@ Aunque la provisión de UPS es una etapa posterior, el estudio de cargas eléctr
 \begin{enumerate}
     \item \textbf{Estimación de Carga Térmica y Eléctrica:}
     \begin{itemize}
-        \item \textbf{IDF Típico (Niveles 1, 4):} Se proyecta una carga de consumo de 1.5 kVA, requiriendo una toma eléctrica dedicada tipo NEMA 5-15R o L5-20R con tierra aislada.
-        \item \textbf{MDF/IDF Denso (Niveles 2, 3):} Debido a la alta densidad de switches PoE para los laboratorios y APs, se estima una carga de 3 kVA. La infraestructura eléctrica debe contar con circuitos independientes de 20A o 30A para evitar disparos de llaves térmicas al encender los equipos.
+        \item \textbf{IDF-04 (Nivel 4):} Se proyecta una carga de consumo de 1.5 kVA, requiriendo una toma eléctrica dedicada tipo NEMA 5-15R o L5-20R con tierra aislada.
+        \item \textbf{MDF/IDF-03 Densos (Niveles 2, 3):} Debido a la alta densidad de switches PoE del MDF y, especialmente, de los laboratorios del tercer piso, se estima una carga de 3 kVA para el MDF y de al menos \textbf{5 kVA para el IDF-03}. La infraestructura eléctrica debe contar con circuitos independientes de 20A o 30A para evitar disparos de llaves térmicas al encender los equipos.
     \end{itemize}
     \item \textbf{Ventilación:} Se ha constatado que los recintos designados requieren ventilación asistida (extractores o aire acondicionado) para disipar el calor generado por los equipos activos y las baterías de los futuros UPS, evitando la degradación de la vida útil de los componentes electrónicos.
 \end{enumerate}
