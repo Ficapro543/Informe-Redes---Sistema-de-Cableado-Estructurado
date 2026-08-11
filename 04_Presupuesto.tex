@@ -2,7 +2,7 @@
 
 % =====================================================================
 % SUPUESTOS QUE DEBES VERIFICAR (afectan montos):
-%  1) Se contabilizan las placas dobles de los planos: 331 faceplates = 662 puertos RJ45.
+%  1) "faceplate" = puerto RJ45 individual  ->  224 (3P) = 112 tomas dobles ; 52 (4P) = 26 tomas.
 %     Si contaste PLACAS dobles, duplica jacks/patch cords/cable.
 %  2) Precio ZG = 350 USD c/u (placeholder). Ajustar segun cotizacion real.
 %  3) Jack contado 1 vez por punto (lado usuario), como en el doc original.
@@ -22,9 +22,8 @@ longitudes de canalización principal son estimadas y la canalización secundari
 4.\textsuperscript{to} piso corresponde a medición real (la del 3.\textsuperscript{er}
 piso es estimada, pendiente de remedición).
 
-Respecto al alcance original se incorporan dos cambios de diseño: (i) el primer piso no
-tiene gabinete propio y sus cables suben directamente al MDF del segundo piso, y (ii)
-\textbf{gabinetes de zona (ZG)}
+Respecto al alcance original se incorporan dos cambios de diseño: (i) un cuarto gabinete
+de distribución \textbf{IDF-01} en el Primer Piso, y (ii) \textbf{gabinetes de zona (ZG)}
 en los laboratorios, que agregan el cableado de cada ambiente antes de subir al IDF de
 piso. En el 3.\textsuperscript{er} piso se eliminaron los Access Point y los puntos de red
 se reubicaron a pared, con el IDF ubicado junto al Centro de Capacitación Informática (CCI).
@@ -37,26 +36,27 @@ se reubicaron a pared, con el IDF ubicado junto al Centro de Capacitación Infor
 \begin{tabular}{|l|l|r|}
 \hline
 \textbf{Ítem} & \textbf{Descripción de Partida} & \textbf{Total (USD)} \\ \hline
-01 & Equipamiento Pasivo y Materiales de Conectividad & 70,355.50 \\ \hline
-02 & Equipamiento Activo de Red & 51,570.00 \\ \hline
-03 & Canalizaciones y Obras Civiles Menores & 9,694.00 \\ \hline
-04 & Mano de Obra (Instalación, Tendido y Peinado) & 32,659.50 \\ \hline
-05 & Certificación, Pruebas y Dossier de Calidad & 5,065.00 \\ \hline
+01 & Equipamiento Pasivo y Materiales de Conectividad & 46,495.50 \\ \hline
+02 & Equipamiento Activo de Red & 48,020.00 \\ \hline
+03 & Canalizaciones y Obras Civiles Menores & 9,844.00 \\ \hline
+04 & Mano de Obra (Instalación, Tendido y Peinado) & 23,566.50 \\ \hline
+05 & Certificación, Pruebas y Dossier de Calidad & 3,602.50 \\ \hline
 06 & Ingeniería de Detalle, Planos Técnicos y Documentación & 1,570.00 \\ \hline
-\multicolumn{2}{|r|}{\textbf{Costo Directo Total}} & \textbf{170,914.00} \\ \hline
-\multicolumn{2}{|r|}{Gastos Generales y Utilidades (15\%)} & 25,637.10 \\ \hline
-\multicolumn{2}{|r|}{Subtotal} & 196,551.10 \\ \hline
-\multicolumn{2}{|r|}{Impuestos (IGV / IVA 18\%)} & 35,379.20 \\ \hline
-\multicolumn{2}{|r|}{\textbf{PRESUPUESTO TOTAL DEL PROYECTO}} & \textbf{231,930.30} \\ \hline
+\multicolumn{2}{|r|}{\textbf{Costo Directo Total}} & \textbf{133,098.50} \\ \hline
+\multicolumn{2}{|r|}{Gastos Generales y Utilidades (15\%)} & 19,964.77 \\ \hline
+\multicolumn{2}{|r|}{Subtotal} & 153,063.27 \\ \hline
+\multicolumn{2}{|r|}{Impuestos (IGV / IVA 18\%)} & 27,551.39 \\ \hline
+\multicolumn{2}{|r|}{\textbf{PRESUPUESTO TOTAL DEL PROYECTO}} & \textbf{180,614.66} \\ \hline
 \end{tabular}
 \end{table}
 
-El presupuesto contempla \textbf{681 puntos de red proyectados}: 331 faceplates dobles Cat 6A
-(662 puertos RJ45), 7 puntos de Access Point y 12 puntos de CCTV, distribuidos en cuatro
-niveles. Incluye cableado horizontal F/UTP Cat 6A, backbone de fibra óptica OM4, un
-gabinete MDF, dos gabinetes IDF y \textbf{14 gabinetes de zona (ZG)}, canalizaciones,
-puesta a tierra y certificación
+El presupuesto contempla \textbf{389 puntos de red proyectados} (415 presupuestados con
+holgura $\approx$7\%): 185 tomas de datos dobles Cat 6A (370 puertos RJ45), 8 puntos de
+Access Point y 11 puntos de CCTV, distribuidos en cuatro niveles. Incluye cableado
+horizontal F/UTP Cat 6A, backbone de fibra óptica OM4, un gabinete MDF, tres gabinetes
+IDF, \textbf{14 gabinetes de zona (ZG)}, canalizaciones, puesta a tierra y certificación
 del 100\% de enlaces.
+
 \section{Metrados de materiales}
 
 \subsection*{Primer Piso (planos modificados del proyecto)}
@@ -64,17 +64,17 @@ del 100\% de enlaces.
 \begin{itemize}
     \item \textbf{Tomas de Datos Doble Cat 6A:} 8 tomas (16 puertos RJ45).
     \item \textbf{Puntos para Access Point (WiFi):} 4 puntos.
-    \item \textbf{Subtotal Primer Piso: 20 puntos.}
+    \item \textbf{Subtotal Primer Piso: 12 puntos.}
     \item \textbf{Canaleta Secundaria:} 102.28 m (medido). \textbf{Canaleta Principal:} 25.91 m (medido).
-    \item \textbf{Gabinete:} Sin gabinete propio; los 20 cables suben directamente al MDF del segundo piso.
+    \item \textbf{Gabinete:} 1 IDF-01 (24U, nuevo).
 \end{itemize}
 
 \subsection*{Segundo Piso (planos modifcados del proyecto)}
 
 \begin{itemize}
     \item \textbf{Tomas de Datos Doble Cat 6A:} 39 tomas (78 puertos RJ45).
-    \item \textbf{Puntos para Access Point (WiFi):} 3 puntos. \textbf{Puntos CCTV:} 4 puntos.
-    \item \textbf{Subtotal Segundo Piso: 85 puntos.}
+    \item \textbf{Puntos para Access Point (WiFi):} 4 puntos. \textbf{Puntos CCTV:} 4 puntos.
+    \item \textbf{Subtotal Segundo Piso: 47 puntos.}
     \item \textbf{Canaleta Secundaria:} 143.67 m (medido). \textbf{Canaleta Principal:} 28.68 m (medido).
     \item \textbf{Gabinetes:} 1 MDF-02 (42U) + 2 ZG (gabinetes de zona en laboratorios).
 \end{itemize}
@@ -84,9 +84,9 @@ del 100\% de enlaces.
 \begin{itemize}
     \item Laboratorios 301--306 y 309--312 (10 labs), Sala de Docentes, Secretaría,
           Jefatura CCI, Caja CCI, Sala de Exposiciones.
-    \item \textbf{Tomas de Datos Doble Cat 6A:} 224 tomas (\textbf{448 puertos RJ45}).
+    \item \textbf{Tomas de Datos Doble Cat 6A:} 112 tomas (\textbf{224 puertos RJ45}).
     \item \textbf{Access Point:} 0 (eliminados en el rediseño). \textbf{CCTV:} 0.
-    \item \textbf{Subtotal Tercer Piso: 448 puntos (puertos de datos).}
+    \item \textbf{Subtotal Tercer Piso: 112 puntos (tomas).}
     \item \textbf{Canaleta Secundaria:} $\approx$330 m (estimado, pendiente de remedición).
           \textbf{Canaleta Principal:} $\approx$38 m (estimado).
     \item \textbf{Gabinetes:} 1 IDF-03 (24U, junto al CCI) + \textbf{10 ZG} (uno por laboratorio).
@@ -97,9 +97,9 @@ del 100\% de enlaces.
 \begin{itemize}
     \item Cubículos de Docentes, Auditorio, Control de Cámaras, Laboratorio de
           Investigación, Dirección/Secretaría de Escuela.
-    \item \textbf{Tomas de Datos Doble Cat 6A:} 60 tomas (\textbf{120 puertos RJ45}).
-    \item \textbf{CCTV:} 8 cámaras. \textbf{Access Point:} 0.
-    \item \textbf{Subtotal Cuarto Piso: 128 puntos} (120 puertos de datos + 8 CCTV).
+    \item \textbf{Tomas de Datos Doble Cat 6A:} 26 tomas (\textbf{52 puertos RJ45}).
+    \item \textbf{CCTV:} 7 cámaras. \textbf{Access Point:} 0.
+    \item \textbf{Subtotal Cuarto Piso: 33 puntos} (26 tomas + 7 CCTV).
     \item \textbf{Canaleta Secundaria:} 311.36 m (medido). \textbf{Canaleta Principal:} $\approx$30 m (estimado).
     \item \textbf{Gabinetes:} 1 IDF-04 (24U) + \textbf{2 ZG}.
 \end{itemize}
@@ -107,13 +107,14 @@ del 100\% de enlaces.
 \subsection*{Resumen Total Actualizado}
 
 \begin{itemize}
-    \item \textbf{Faceplates dobles:} 8 + 39 + 224 + 60 = \textbf{331 faceplates} (\textbf{662 puertos RJ45}).
-    \item \textbf{Access Point:} 7 (4 en 1.\textsuperscript{er} + 3 en 2.\textsuperscript{do} piso).
-    \item \textbf{Cámaras CCTV:} 12 (4 en 2.\textsuperscript{do} + 8 en 4.\textsuperscript{to} piso).
-    \item \textbf{Total de puntos de red proyectados:} 662 + 7 + 12 = \textbf{681 puntos}.
+    \item \textbf{Tomas de datos dobles:} 8 + 39 + 112 + 26 = \textbf{185 tomas} (\textbf{370 puertos RJ45}).
+    \item \textbf{Access Point:} 8 (4 en 1.\textsuperscript{er} + 4 en 2.\textsuperscript{do} piso).
+    \item \textbf{Cámaras CCTV:} 11 (4 en 2.\textsuperscript{do} + 7 en 4.\textsuperscript{to} piso).
+    \item \textbf{Total de puntos de red proyectados:} 370 + 8 + 11 = \textbf{389 puntos};
+          presupuestado con holgura: \textbf{415 puntos}.
     \item \textbf{Canaleta Principal total:} 25.91 + 28.68 + 38 + 30 $\approx$ \textbf{123 m}.
     \item \textbf{Canaleta Secundaria total:} 102.28 + 143.67 + 330 + 311.36 $\approx$ \textbf{887 m}.
-    \item \textbf{Gabinetes:} MDF-02 (42U) + IDF-03/04 (24U) + \textbf{14 ZG} de zona.
+    \item \textbf{Gabinetes:} MDF-02 (42U) + IDF-01/03/04 (24U) + \textbf{14 ZG} de zona.
 \end{itemize}
 
 \section{Presupuesto detallado por partidas}
@@ -121,97 +122,105 @@ del 100\% de enlaces.
 \begin{table}[H]
 \centering
 \caption{Partidas de Equipos Pasivos}
-\begin{tabular}{|c|l|c|l|c|r|r|r|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|p{5.5cm}|c|l|c|r|r|r|}
 \hline
 \textbf{Item} & \textbf{Descripción Técnica} & \textbf{Marca} & \textbf{Modelo} & \textbf{Und} & \textbf{Cant} & \textbf{P.U.(\$)} & \textbf{Total(\$)} \\ \hline
-1.1 & Cable F/UTP Cat6A LSZH 305m & Panduit & PUFL6X04WH & Caja & 105 & 310.00 & 32,550.00 \\ \hline
-1.2 & Patch Panel Modular 24P Vacío & CommScope & 760237040 & Und & 30 & 85.00 & 2,550.00 \\ \hline
-1.3 & Jack RJ45 Cat6A Blindado (lado usuario) & Panduit & CJS6X88TGY & Und & 681 & 14.00 & 9,534.00 \\ \hline
-1.4 & Patch Cord F/UTP Cat6A 2.1m & Panduit & CO6X7BU & Und & 681 & 12.00 & 8,172.00 \\ \hline
-1.5 & Patch Cord F/UTP Cat6A 1.0m & Panduit & CO6X3BU & Und & 681 & 9.00 & 6,129.00 \\ \hline
-1.6 & Kit Fibra Óptica OM4 (2 enlaces backbone MDF--IDF) & CommScope & TeraSPEED & Und & 2 & 550.00 & 1,100.00 \\ \hline
+1.1 & Cable F/UTP Cat6A LSZH 305m & Panduit & PUFL6X04WH & Caja & 62 & 310.00 & 19,220.00 \\ \hline
+1.2 & Patch Panel Modular 24P Vacío & CommScope & 760237040 & Und & 18 & 85.00 & 1,530.00 \\ \hline
+1.3 & Jack RJ45 Cat6A Blindado (lado usuario) & Panduit & CJS6X88TGY & Und & 415 & 14.00 & 5,810.00 \\ \hline
+1.4 & Patch Cord F/UTP Cat6A 2.1m & Panduit & CO6X7BU & Und & 415 & 12.00 & 4,980.00 \\ \hline
+1.5 & Patch Cord F/UTP Cat6A 1.0m & Panduit & CO6X3BU & Und & 415 & 9.00 & 3,735.00 \\ \hline
+1.6 & Kit Fibra Óptica OM4 (3 enlaces backbone MDF--IDF) & CommScope & TeraSPEED & Und & 3 & 550.00 & 1,650.00 \\ \hline
 1.7 & Gabinete de Piso 42U 19'' (MDF 2do Piso) & Tripp Lite & SR42UB & Und & 1 & 980.00 & 980.00 \\ \hline
+1.8 & Gabinete 24U 19'' (IDF-01, 1er Piso) & Tripp Lite & SRW24US & Und & 1 & 435.00 & 435.00 \\ \hline
 1.9 & Gabinete 24U 19'' (IDF-03, 3er Piso) & Tripp Lite & SRW24US & Und & 1 & 435.00 & 435.00 \\ \hline
 1.10 & Gabinete 24U 19'' (IDF-04, 4to Piso) & Tripp Lite & SRW24US & Und & 1 & 435.00 & 435.00 \\ \hline
-1.11 & Faceplate 2 puertos con iconos & Panduit & CFPL2EIWH & Und & 331 & 3.50 & 1,158.50 \\ \hline
-1.12 & Caja superficial PVC 1 módulo & Panduit & CBX2EIWH & Und & 331 & 2.00 & 662.00 \\ \hline
-1.13 & Organizador horizontal 1U rack & Tripp Lite & NR2600 & Und & 30 & 35.00 & 1,050.00 \\ \hline
-1.14 & Kit puesta a tierra (TMGB + 2 TGB + conductor 6 AWG) & Panduit & TMGB-060/TGB-040 & Global & 1 & 700.00 & 700.00 \\ \hline
+1.11 & Faceplate 2 puertos con iconos & Panduit & CFPL2EIWH & Und & 185 & 3.50 & 647.50 \\ \hline
+1.12 & Caja superficial PVC 1 módulo & Panduit & CBX2EIWH & Und & 204 & 2.00 & 408.00 \\ \hline
+1.13 & Organizador horizontal 1U rack & Tripp Lite & NR2600 & Und & 18 & 35.00 & 630.00 \\ \hline
+1.14 & Kit puesta a tierra (TMGB + 3 TGB + conductor 6 AWG) & Panduit & TMGB-060/TGB-040 & Global & 1 & 700.00 & 700.00 \\ \hline
 1.15 & \textbf{Gabinete de Zona ZG} (pared, incl. mini patch panel y organizador) & Tripp Lite & --- & Und & 14 & 350.00 & 4,900.00 \\ \hline
-\multicolumn{7}{|r|}{\textbf{Subtotal Equipos Pasivos}} & \textbf{70,355.50} \\ \hline
-\end{tabular}
+\multicolumn{7}{|r|}{\textbf{Subtotal Equipos Pasivos}} & \textbf{46,495.50} \\ \hline
+\end{tabular}}%
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Partidas de Equipos Activos}
-\begin{tabular}{|c|l|c|l|c|r|r|r|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|p{5.5cm}|c|l|c|r|r|r|}
 \hline
 \textbf{Item} & \textbf{Descripción Técnica} & \textbf{Marca} & \textbf{Modelo} & \textbf{Und} & \textbf{Cant} & \textbf{P.U.(\$)} & \textbf{Total(\$)} \\ \hline
-2.1 & Switch Catalyst 9200 48P PoE+ & Cisco & C9200-48P-E & Und & 10 & 4,200.00 & 42,000.00 \\ \hline
-2.3 & Transceptor SFP+ 10G SR MMF & Cisco & SFP-10G-SR & Und & 4 & 300.00 & 1,200.00 \\ \hline
-2.4 & UPS Online 3kVA Rackeable & Tripp Lite & SU3000RTX & Und & 3 & 450.00 & 1,350.00 \\ \hline
-2.5 & Access Point WiFi 6 Interior & Cisco & C9120AXI & Und & 7 & 580.00 & 4,060.00 \\ \hline
-2.6 & Cámara IP Fija Interior 2MP PoE+ & Dahua/Hikvision & -- & Und & 12 & 180.00 & 2,160.00 \\ \hline
+2.1 & Switch Catalyst 9200 48P PoE+ & Cisco & C9200-48P-E & Und & 8 & 4,200.00 & 33,600.00 \\ \hline
+2.2 & Switch Catalyst 9200 24P PoE+ (IDF-01) & Cisco & C9200-24P-E & Und & 1 & 2,800.00 & 2,800.00 \\ \hline
+2.3 & Transceptor SFP+ 10G SR MMF & Cisco & SFP-10G-SR & Und & 8 & 300.00 & 2,400.00 \\ \hline
+2.4 & UPS Online 3kVA Rackeable & Tripp Lite & SU3000RTX & Und & 4 & 450.00 & 1,800.00 \\ \hline
+2.5 & Access Point WiFi 6 Interior & Cisco & C9120AXI & Und & 8 & 580.00 & 4,640.00 \\ \hline
+2.6 & Cámara IP Fija Interior 2MP PoE+ & Dahua/Hikvision & -- & Und & 11 & 180.00 & 1,980.00 \\ \hline
 2.7 & NVR 16 canales PoE+ con HDD 4TB & Dahua/Hikvision & -- & Und & 1 & 800.00 & 800.00 \\ \hline
-\textbf{Subtotal Equipos Activos} & & & & & & & \textbf{51,570.00} \\ \hline
-\end{tabular}
+\multicolumn{7}{|r|}{\textbf{Subtotal Equipos Activos}} & \textbf{48,020.00} \\ \hline
+\end{tabular}}%
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Partidas de Canalizaciones y Obras Civiles}
-\begin{tabular}{|c|l|c|r|r|r|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|p{6cm}|c|r|r|r|}
 \hline
 \textbf{Item} & \textbf{Descripción Técnica} & \textbf{Und} & \textbf{Cant} & \textbf{P.U.(\$)} & \textbf{Total(\$)} \\ \hline
 3.1 & Escalerilla tipo malla electrozincada 300mm (troncal, 4 pisos) & m & 123 & 15.00 & 1,845.00 \\ \hline
 3.2 & Soportería metálica tipo L y accesorios & Glb & 1 & 900.00 & 900.00 \\ \hline
 3.3 & Canaleta PVC doble vía 40$\times$20mm con divisor (secundaria, 4 pisos) & m & 887 & 5.00 & 4,435.00 \\ \hline
-3.4 & Tubería conduit EMT 1'' para backbone fibra & m & 60 & 5.00 & 300.00 \\ \hline
+3.4 & Tubería conduit EMT 1'' para backbone fibra & m & 90 & 5.00 & 450.00 \\ \hline
 3.5 & Cajas de registro metálicas y buzones de paso & Und & 30 & 24.00 & 720.00 \\ \hline
 3.6 & Sellos cortafuego intumescentes para pases de losa & Und & 8 & 58.00 & 464.00 \\ \hline
 3.7 & Insumos de fijación (tacos, pernos, soportes, anclajes) & Glb & 1 & 550.00 & 550.00 \\ \hline
 3.8 & Accesorios de canalización (curvas, uniones, derivaciones) & Glb & 1 & 480.00 & 480.00 \\ \hline
-\multicolumn{5}{|r|}{\textbf{Subtotal Canalizaciones}} & \textbf{9,694.00} \\ \hline
-\end{tabular}
+\multicolumn{5}{|r|}{\textbf{Subtotal Canalizaciones}} & \textbf{9,844.00} \\ \hline
+\end{tabular}}%
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Partidas de Mano de Obra}
-\begin{tabular}{|c|l|c|r|r|r|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|p{6cm}|c|r|r|r|}
 \hline
 \textbf{Item} & \textbf{Descripción de Actividad} & \textbf{Und} & \textbf{Cant} & \textbf{P.U.(\$)} & \textbf{Total(\$)} \\ \hline
-4.1 & Tendido de cable UTP Cat 6A (inc.\ peinado) & Pto & 681 & 15.00 & 10,215.00 \\ \hline
-4.2 & Instalación de canalización secundaria & Pto & 681 & 10.00 & 6,810.00 \\ \hline
+4.1 & Tendido de cable UTP Cat 6A (inc.\ peinado) & Pto & 415 & 15.00 & 6,225.00 \\ \hline
+4.2 & Instalación de canalización secundaria & Pto & 415 & 10.00 & 4,150.00 \\ \hline
 4.3 & Instalación de escalerilla y soportería & m & 123 & 8.00 & 984.00 \\ \hline
-4.4 & Terminación de jacks y montaje de faceplates & Pto & 681 & 8.00 & 5,448.00 \\ \hline
-4.5 & Montaje y peinado de gabinetes (3 princ. + 14 ZG) & Glb & 17 & 350.00 & 5,950.00 \\ \hline
-4.6 & Etiquetado técnico bajo norma TIA-606-C & Pto & 681 & 2.50 & 1,702.50 \\ \hline
+4.4 & Terminación de jacks y montaje de faceplates & Pto & 415 & 8.00 & 3,320.00 \\ \hline
+4.5 & Montaje y peinado de gabinetes (4 princ. + 14 ZG) & Glb & 18 & 350.00 & 6,300.00 \\ \hline
+4.6 & Etiquetado técnico bajo norma TIA-606-C & Pto & 415 & 2.50 & 1,037.50 \\ \hline
 4.7 & Instalación de sistema de puesta a tierra y bonding & Glb & 1 & 850.00 & 850.00 \\ \hline
 4.8 & Instalación de fibra óptica backbone & Glb & 1 & 700.00 & 700.00 \\ \hline
-\multicolumn{5}{|r|}{\textbf{Subtotal Mano de Obra}} & \textbf{32,659.50} \\ \hline
-\end{tabular}
+\multicolumn{5}{|r|}{\textbf{Subtotal Mano de Obra}} & \textbf{23,566.50} \\ \hline
+\end{tabular}}%
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Partidas de Certificación, Pruebas y Dossier de Calidad}
-\begin{tabular}{|c|l|c|r|r|r|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|p{6cm}|c|r|r|r|}
 \hline
 \textbf{Item} & \textbf{Descripción de Actividad} & \textbf{Und} & \textbf{Cant} & \textbf{P.U.(\$)} & \textbf{Total(\$)} \\ \hline
-5.1 & Certificación de enlace Cat 6A con Fluke DSX-8000 & Pto & 681 & 5.50 & 3,745.50 \\ \hline
+5.1 & Certificación de enlace Cat 6A con Fluke DSX-8000 & Pto & 415 & 5.50 & 2,282.50 \\ \hline
 5.2 & Reporte digital LinkWare y Dossier de Certificación & Glb & 1 & 400.00 & 400.00 \\ \hline
 5.3 & Certificación de fibra óptica OM4 Nivel 1 (LSPM) & Glb & 1 & 400.00 & 400.00 \\ \hline
 5.4 & Elaboración de planos As-Built post-instalación & Glb & 1 & 520.00 & 520.00 \\ \hline
-\multicolumn{5}{|r|}{\textbf{Subtotal Certificación}} & \textbf{5,065.00} \\ \hline
-\end{tabular}
+\multicolumn{5}{|r|}{\textbf{Subtotal Certificación}} & \textbf{3,602.50} \\ \hline
+\end{tabular}}%
 \end{table}
 
 \begin{table}[H]
 \centering
 \caption{Partidas de Ingeniería de Detalle, Planos Técnicos y Documentación}
-\begin{tabular}{|c|l|c|r|r|r|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|p{6cm}|c|r|r|r|}
 \hline
 \textbf{Item} & \textbf{Descripción del Entregable} & \textbf{Und} & \textbf{Cant} & \textbf{P.U.(\$)} & \textbf{Total(\$)} \\ \hline
 6.1 & Planos de racks y salas de telecomunicaciones & Glb & 1 & 350.00 & 350.00 \\ \hline
@@ -220,7 +229,7 @@ del 100\% de enlaces.
 6.4 & Diagrama de puesta a tierra & Glb & 1 & 250.00 & 250.00 \\ \hline
 6.5 & Planos de ubicación general y planta (4 pisos) & Glb & 1 & 370.00 & 370.00 \\ \hline
 \multicolumn{5}{|r|}{\textbf{Subtotal Ingeniería}} & \textbf{1,570.00} \\ \hline
-\end{tabular}
+\end{tabular}}%
 \end{table}
 
 \clearpage
@@ -230,7 +239,7 @@ del 100\% de enlaces.
 \subsection*{APU: Instalación de Punto de Red Cat 6A F/UTP (Costo Unitario Referencial)}
 
 \begin{itemize}
-    \item \textbf{Materiales (\$24.00 por punto):} Para los \textbf{681 puntos} del alcance, incluye cable proporcional por punto (\$18.50), jack RJ45 (\$2.60), faceplate (\$1.30), caja superficial (\$0.75), patch cords proporcional (\$0.85), insumos de etiquetado (\$0.10).
+    \item \textbf{Materiales (\$24.00):} Cable proporcional por punto (\$18.50), jack RJ45 (\$2.60), faceplate (\$1.30), caja superficial (\$0.75), patch cords proporcional (\$0.85), insumos de etiquetado (\$0.10).
     \item \textbf{Mano de Obra (\$25.50):} Técnico especialista en cableado y ayudante.
     \item \textbf{Equipos y Herramientas (\$4.50):} Herramientas de impacto, andamiaje, consumibles.
     \item \textbf{Costo Unitario Total por Punto:} \textbf{\$54.00 USD}
